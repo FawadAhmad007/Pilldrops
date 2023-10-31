@@ -1,0 +1,521 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/Assets/fonts/Octicons.ttf",
+      "sha1": "56acefc0731f35ee23b195b1c8cb5fa94a0db97b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-Black.ttf",
+      "sha1": "9dd606842d7f4a7aff544fde9c081df97fee1e83"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-BlackItalic.ttf",
+      "sha1": "8d63f2c93bcab73686dd23e576effcf30c50902b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-Bold.ttf",
+      "sha1": "2d27e81394a337c31fac01034326215bdc192f9a"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-BoldItalic.ttf",
+      "sha1": "40a9d0ea147ec3c450c4a7de226e946268d03c37"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-ExtraBold.ttf",
+      "sha1": "3402099b95791d6605d24878184d74d1a926d0c9"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-ExtraBoldItalic.ttf",
+      "sha1": "d7c322f91394798661cdd2baa7f9f49b0275d200"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-ExtraLight.ttf",
+      "sha1": "77e865ddf23ad4917bb954ec35acc72ae1673f4d"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-ExtraLightItalic.ttf",
+      "sha1": "30389e2a221afad3e12ebbfaa043e509e6dc0dbc"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-Italic.ttf",
+      "sha1": "62214de5419e7c67f4fcf5fb3219d52e36641a66"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-Light.ttf",
+      "sha1": "f14ae3ca40edbdb1956cb09d7a422fe42b4e76d1"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-LightItalic.ttf",
+      "sha1": "8a3841f6caeaed4e3ffddf5cef78e2ce5b661d79"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-Medium.ttf",
+      "sha1": "59bf0b3239aa56ac0fbf2c238fd0fc8303fcf900"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-MediumItalic.ttf",
+      "sha1": "bd9a31f9ee9f0810f09b87486e70d4433348f926"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-Regular.ttf",
+      "sha1": "d166ebb2936f643ae796036c069df2a9f22cf243"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-SemiBold.ttf",
+      "sha1": "252bbc666ae673eb8063180a5b9304ae7c2917af"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-SemiBoldItalic.ttf",
+      "sha1": "27731cc27d72ae1016a56d2f8bb257466ed6c899"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-Thin.ttf",
+      "sha1": "668d6f93630d3715a3b7f626f2cdc1a11987bcab"
+    },
+    {
+      "path": "src/Assets/fonts/Saira-ThinItalic.ttf",
+      "sha1": "4b562e5235c03678a86c552a8d4c44a291e82129"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-Black.ttf",
+      "sha1": "f8649f907f0fc6df6d77e222b0565964b5bccbe2"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-BlackItalic.ttf",
+      "sha1": "86c4d8b8852e66468c5a837a457fe1aae64bcb36"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-Bold.ttf",
+      "sha1": "7e789dabb7d4a56e6c5e520c11b707834ac718b7"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-BoldItalic.ttf",
+      "sha1": "804c30f9133867277c3e50133cdbbb3dc5f7f430"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-ExtraBold.ttf",
+      "sha1": "5970137fb73b9542b08779757a0bd51c5ddf1259"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-ExtraBoldItalic.ttf",
+      "sha1": "324b35ff0bd38ecf8b1d7aad207fbdfe275818ea"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-ExtraLight.ttf",
+      "sha1": "cd4df8d23015b58997fc9f5d6a41271291c9152d"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-ExtraLightItalic.ttf",
+      "sha1": "6c5a016e89a7cf3cbd3e0380492a401cbae5d49e"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-Italic.ttf",
+      "sha1": "9c910af503cb8ff097b9e75ad00065978131ae67"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-Light.ttf",
+      "sha1": "61f54330995b8cb0777342d6a18da26e0fcc59b2"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-LightItalic.ttf",
+      "sha1": "d05ea3d1bf54d4b9e56d7c3c7a3f5d6a64e1272e"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-Medium.ttf",
+      "sha1": "d2864aac54526b238360f15e90d674550b404766"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-MediumItalic.ttf",
+      "sha1": "d8e2738adf271cfcac260d9bdd0b8bfad265a823"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-Regular.ttf",
+      "sha1": "5be6026c1c59b945b0685fda5bd3e6ccdcddec33"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-SemiBold.ttf",
+      "sha1": "c287847a18eac06978ee46f2567f3cf3ffaf148f"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-SemiBoldItalic.ttf",
+      "sha1": "0aeb84d920e89eda8ef37a0104f81fd76a021b96"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-Thin.ttf",
+      "sha1": "d9858e99bfb312eeefbec1ebb61ad42223ff4d13"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Condensed-ThinItalic.ttf",
+      "sha1": "8881d7321b2cecd739afddb8863d3d450d44c092"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-Black.ttf",
+      "sha1": "e3ef753aca35c7183b31b9e46e1c3a80cc91af12"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-BlackItalic.ttf",
+      "sha1": "f5d601129cca85c86b09d29096fe0cd07bd2910b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-Bold.ttf",
+      "sha1": "9d25b7c76d638180ef9b6d785130d1d2f3e6d066"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-BoldItalic.ttf",
+      "sha1": "6d0ea6422677bbccc3afb2f64b87faf427dd5400"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-ExtraBold.ttf",
+      "sha1": "da8d34ab792f3fc6c970cb1e8083df7974745e84"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-ExtraBoldItalic.ttf",
+      "sha1": "eae51843b57db11e9e57f58a2aba5778e95ddf97"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-ExtraLight.ttf",
+      "sha1": "1943f5a786dadf4461230a18414463f225914dde"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-ExtraLightItalic.ttf",
+      "sha1": "6cf4e60de75c6cd8da9b9708ea24a2f29dc535b9"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-Italic.ttf",
+      "sha1": "b24a1e090bd458a8df0607af8826f70abff27ef9"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-Light.ttf",
+      "sha1": "7a9502228338787f040e84868ede6c31b490503c"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-LightItalic.ttf",
+      "sha1": "514a68e57254922c7cccba6b750fb8e89905a165"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-Medium.ttf",
+      "sha1": "795455fd940975126c8981d4a8b4f7e9284216b6"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-MediumItalic.ttf",
+      "sha1": "f064c7e8d21046c32d5da4c74f1330f36209376d"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-Regular.ttf",
+      "sha1": "2d55d25604bd517431d540d859e97a68afb7abf4"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-SemiBold.ttf",
+      "sha1": "5905d949ebffcccafd3a082b6b82cf11a11d9e84"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-SemiBoldItalic.ttf",
+      "sha1": "a75df32bf7ade1c36faf63b9d8a0d96524f31b42"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-Thin.ttf",
+      "sha1": "ffc5837dc2bac9a60e876e7a5b597f23efed19ac"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_Expanded-ThinItalic.ttf",
+      "sha1": "cfe2bff14791f2fd49a72dd3521d4b45a2a20000"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-Black.ttf",
+      "sha1": "8caa11c1a71d55d20a711bca93cb16b9fa5cdb9f"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-BlackItalic.ttf",
+      "sha1": "d9e3d8e3f83aa9d2712ec5e7c11d1e2d2671cf2b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-Bold.ttf",
+      "sha1": "987adcc2ac918445210bb105919e9941572ea691"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-BoldItalic.ttf",
+      "sha1": "2cc19d8660fc9d56b7b9bf37eb40c776ed923148"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-ExtraBold.ttf",
+      "sha1": "1d6af3f76ecf4d8469835dc207ad3e790f8577ae"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "a691ae54c56592f0e417ea4ec6c6e5ff9f4cb21d"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-ExtraLight.ttf",
+      "sha1": "1d36b15a616cdcf63131a88f2c1698e812e2f612"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-ExtraLightItalic.ttf",
+      "sha1": "1ab9a0e81894c2b6d6a173b3ec6108e260725fe0"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-Italic.ttf",
+      "sha1": "bde3d74fe631b6cfa5c85ca0facfa83a59a80fbb"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-Light.ttf",
+      "sha1": "9bb4221a71fafc0cbff0ff6e231c4ed693403d38"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-LightItalic.ttf",
+      "sha1": "6c78572b1c8f81c2922f6ceba921042d69aeaf2d"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-Medium.ttf",
+      "sha1": "a210fe19d69dd4d4314748208d9158e38b5d3953"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-MediumItalic.ttf",
+      "sha1": "d3c2ebf19aa90dc36d881f837e700bf581cf5198"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-Regular.ttf",
+      "sha1": "b442fe999841a7f092113693f3924dcfaab0873e"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-SemiBold.ttf",
+      "sha1": "c62fd8524d9d6c720b1e7b25446661a2201fd60e"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-SemiBoldItalic.ttf",
+      "sha1": "6f43a88275993fb0492009df9b3c15126aafd1db"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-Thin.ttf",
+      "sha1": "a5a5d7ef0328d7b5fcc607b874ea3d638f344caa"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_ExtraCondensed-ThinItalic.ttf",
+      "sha1": "a57b807d127dad37dc972e73de956b0a73328a15"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-Black.ttf",
+      "sha1": "ebff4de73c1e2e4c13202e27a4fc472d4a8fd3cb"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-BlackItalic.ttf",
+      "sha1": "fa41bd662e727612e13cdaa823d20884268bd236"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-Bold.ttf",
+      "sha1": "b23ef1d0639632082d28df5e0607167547b342d0"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-BoldItalic.ttf",
+      "sha1": "a8331508577513f5a3bffb05bd70bb9680f0741a"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-ExtraBold.ttf",
+      "sha1": "252db58bb44d7a2bd4e5b52b006e316adec5f13f"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-ExtraBoldItalic.ttf",
+      "sha1": "3c053f22b9420b67bd65d9ee59dfa1e92f65dc9c"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-ExtraLight.ttf",
+      "sha1": "041d013066065f44ca4ae884df59172c8560b719"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-ExtraLightItalic.ttf",
+      "sha1": "931967df25a36271eacec7f7ce97ff9ce21f233b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-Italic.ttf",
+      "sha1": "d1ff5733a550ba3967e3d7008cd996cd18a57ece"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-Light.ttf",
+      "sha1": "acbcf240fc4230b510dfc4834cf83cdd7c01da27"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-LightItalic.ttf",
+      "sha1": "f9f1348770f56ff2b4a8ef5d0caa101c6642b05e"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-Medium.ttf",
+      "sha1": "907d9c959b67cc24bcf48bc6042de94b07aa965a"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-MediumItalic.ttf",
+      "sha1": "d8c9e5fac26b49f93574ee0be2c7b7dceb83b628"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-Regular.ttf",
+      "sha1": "07b737ef8b4a2a67812707944f0ce7c848e19d25"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-SemiBold.ttf",
+      "sha1": "bf3d27e901d67f66c47bb215050aa6cd925d3b77"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-SemiBoldItalic.ttf",
+      "sha1": "ef6259bb684276499cf19c8515c248e10399fd29"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-Thin.ttf",
+      "sha1": "8a60c759850e85bd0f4190b46bdd6ad38fc05e8b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiCondensed-ThinItalic.ttf",
+      "sha1": "1e13bf00c9e7dff5a180ac68dbe2aeb9c77246e4"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-Black.ttf",
+      "sha1": "18efb6d3b950c6246d65c00638662d4597d7e027"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-BlackItalic.ttf",
+      "sha1": "96142dd3a279ac5f1b569e1f5f15e1cf88659990"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-Bold.ttf",
+      "sha1": "a5f134103e5ce8636b8620c8f49a6c47af5bdaaa"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-BoldItalic.ttf",
+      "sha1": "3285b5288814115c81af8a5a7992edef51626c6b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-ExtraBold.ttf",
+      "sha1": "3c26def83cfefebdac5bca3ee531a0c818dcd053"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-ExtraBoldItalic.ttf",
+      "sha1": "54f66d1ad4997bb7bd81e610b8bdea765fd1d4d8"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-ExtraLight.ttf",
+      "sha1": "27838f909a8d54279ece738330bc85a8971dc2a1"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-ExtraLightItalic.ttf",
+      "sha1": "ef258ca9efd5f6ae073b9005342840405c24b5d1"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-Italic.ttf",
+      "sha1": "ccb314666b63450aa82e6161e9094f93d7855a5d"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-Light.ttf",
+      "sha1": "5c66abddf0196b6c72d0fe846be8edd15a92f0d0"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-LightItalic.ttf",
+      "sha1": "200ba4f6d9b3c0ede8142bda62071c214673334d"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-Medium.ttf",
+      "sha1": "fc9dd9855cc69630f5c2ab8be13ee5952976a440"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-MediumItalic.ttf",
+      "sha1": "cf97d91be466b3ad921981ffa9a79cf85ab15a01"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-Regular.ttf",
+      "sha1": "63cb5d7657061bfa8bb3d363c7963d8797060524"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-SemiBold.ttf",
+      "sha1": "445cebb62046a36685dd6eb56b10c8b877f41f34"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-SemiBoldItalic.ttf",
+      "sha1": "ffa37ddfe770030ea08ab3d4cb49147c8c00157b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-Thin.ttf",
+      "sha1": "88c9b61be14df13fc25841b77d8483ede3457c4b"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_SemiExpanded-ThinItalic.ttf",
+      "sha1": "f7f5ee7d3e8c6b20daee58637c9ec38a3e2e5616"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-Black.ttf",
+      "sha1": "e39dc959f393731e2dbe2b814989c2f7f81debd0"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-BlackItalic.ttf",
+      "sha1": "a2d8c013d9e067be7ee008721ce7620e10ca13df"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-Bold.ttf",
+      "sha1": "f775a59e4250e774b38365b692a2852841af354c"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-BoldItalic.ttf",
+      "sha1": "c0536b5e87063c7b756169e52e7ca348f3ddc647"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-ExtraBold.ttf",
+      "sha1": "abaac57701527beb7cbba3fcf85ab358192d2daa"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-ExtraBoldItalic.ttf",
+      "sha1": "54b5b714c48c5c2d3c747368c5d2ec3263b85659"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-ExtraLight.ttf",
+      "sha1": "e3570336e9a061a8c7d5fa4d8be58103ede42317"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-ExtraLightItalic.ttf",
+      "sha1": "7ad8cd99ce8e04ca38b86162d67eddd4945138cf"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-Italic.ttf",
+      "sha1": "038dd98fc2f1d42d409f2c7a6f2b713ce593f3bd"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-Light.ttf",
+      "sha1": "9adb30cd3189b74db4142485a23f504e157badd1"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-LightItalic.ttf",
+      "sha1": "e42fa7d070924c130c5bb454fc1be1d69850e3f5"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-Medium.ttf",
+      "sha1": "2ec1059258f2b4629b55b9acade584d575bcaed7"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-MediumItalic.ttf",
+      "sha1": "f2b5871ce78e4abd4a03c87223d8b45f8377d961"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-Regular.ttf",
+      "sha1": "1d6913aea5fd8c3f6a40cc77df2cac77419d27c3"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-SemiBold.ttf",
+      "sha1": "9decffb9d646c83c08757b53175bcf1bbc4cb031"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-SemiBoldItalic.ttf",
+      "sha1": "96d22f70470423174e62da1525efa943200b4e61"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-Thin.ttf",
+      "sha1": "7977e4f85af77a63ab41654e58bdb79083c8c5b9"
+    },
+    {
+      "path": "src/Assets/fonts/Saira_UltraCondensed-ThinItalic.ttf",
+      "sha1": "493f63e3ee4228f28c0900933f3d8624fcf2550f"
+    },
+    {
+      "path": "src/Assets/fonts/ZenDots-Regular.ttf",
+      "sha1": "77a272f37fd2c260477469b6fe8fa5c5dea890e9"
+    },
+    {
+      "path": "src/Assets/fonts/Zocial.ttf",
+      "sha1": "6a48a962b06cc3acbdfd61df0d9a34744eea5e8d"
+    }
+  ]
+}
