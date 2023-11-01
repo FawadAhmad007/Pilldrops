@@ -1,7 +1,6 @@
-
-import React, { useContext } from 'react';
-import { Platform, Text } from 'react-native';
-import { mvs } from '../config/metrices';
+import React, { useContext } from "react";
+import { Platform, Text } from "react-native";
+import { mvs } from "../config/metrices";
 
 const SairaText = ({
   lh = mvs(14),
@@ -19,7 +18,6 @@ const SairaText = ({
   color,
   ...props
 }) => {
-
   return (
     <>
       <Text
@@ -34,15 +32,15 @@ const SairaText = ({
           marginBottom: mb,
           lineHeight: lh,
           fontWeight: fw,
-          color: color ? color : '#000000',
-          textAlign: textAlign ? 'right' : 'left',
-          fontFamily: 'Saira',
-          textDecorationLine: isUnderLine ? 'underline' : "none",
+          color: color ? color : "#000000",
+          textAlign: textAlign,
+          fontFamily: "Saira",
+          textDecorationLine: isUnderLine ? "underline" : "none",
           ...style,
-        }}>
+        }}
+      >
         {label}
         {props.children}
-
       </Text>
     </>
   );
