@@ -28,12 +28,15 @@ const SairaBold = ({
         color: color,
         marginTop: mt,
         marginRight: mr,
+        includeFontPadding: false,
         marginLeft: ml,
         marginBottom: mb,
         lineHeight: lh,
         fontWeight: fw,
+
         paddingTop: mvs(1),
         includeFontPadding: false,
+
         color: color ? color : "#000000",
         textAlign: textAlign ? "right" : "left",
         fontFamily: Platform.OS === "android" ? "Saira-Bold" : "Saira Bold",

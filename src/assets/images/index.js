@@ -24,8 +24,11 @@ const PlusBlue = require("./PlusBlue.png");
 const CameraBlue = require("./CameraBlue.png");
 const Map = require("./map.png");
 const Share = require("./share.png");
+
 const Pen = require("./pen.png");
 const Message = require("./message.png");
+
+const Time = require("./time.png");
 
 export default Images = {
   LoginBg,
@@ -34,6 +37,9 @@ export default Images = {
   UserImg,
   Pen,
   LogoMini,
+  UserImg,
+  LogoMini,
+  Time,
   CalenderIcon,
   Arrow,
   Cell,
