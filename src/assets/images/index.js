@@ -24,15 +24,27 @@ const PlusBlue = require("./PlusBlue.png");
 const CameraBlue = require("./CameraBlue.png");
 const Map = require("./map.png");
 const Share = require("./share.png");
+const Paper = require("./paper.png");
+const Sign = require("./sign.png");
 
 const Pen = require("./pen.png");
 const Message = require("./message.png");
 
 const Time = require("./time.png");
+const CameraBlack = require("./camerv.png");
+const Photo = require("./photo.png");
+const SignRecive = require("./signRe.png");
+const SignSend = require("./signSend.png");
 
 export default Images = {
   LoginBg,
+  SignRecive,
+  Photo,
   LogoFullImg,
+  SignSend,
+  CameraBlack,
+  Paper,
+  Sign,
   Message,
   UserImg,
   Pen,

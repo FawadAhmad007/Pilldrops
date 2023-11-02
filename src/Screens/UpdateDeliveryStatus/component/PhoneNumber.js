@@ -19,7 +19,7 @@ const PhoneNumber = ({ label, number }) => {
       <View style={{ width: "30%" }}>
         <SairaText label={label} fw={"200"} lh={16} size={12} />
       </View>
-      <View style={{ width: "30%" }}>
+      <View>
         <SairaBold
           label={number}
           fw={"700"}
