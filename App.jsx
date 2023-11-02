@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { AuthProvider } from './src/Context/AuthContext';
 import Routes from './src/Navigation/Routes';
+import UpdateDeliveryStatus from './src/Screens/UpdateDeliveryStatus';
 
 const App = () => {
 
@@ -16,7 +17,8 @@ const App = () => {
 
     <AuthProvider>
       <StatusBar barStyle={'dark-content'} />
-      <Routes />
+      {/* <Routes /> */}
+      <UpdateDeliveryStatus/>
     </AuthProvider>
   );
 };

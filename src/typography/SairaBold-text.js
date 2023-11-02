@@ -1,7 +1,6 @@
-
-import React, { useContext } from 'react';
-import { Text } from 'react-native';
-import { mvs } from '../config/metrices';
+import React, { useContext } from "react";
+import { Text } from "react-native";
+import { mvs } from "../config/metrices";
 
 const SairaBold = ({
   lh = mvs(14),
@@ -11,6 +10,7 @@ const SairaBold = ({
   mb,
   label,
   style,
+  pt,
   textAlign,
   numberOfLines = 1,
   size = mvs(10),
@@ -19,7 +19,6 @@ const SairaBold = ({
   isUnderLine,
   ...props
 }) => {
-
   return (
     <Text
       {...props}
@@ -33,12 +32,15 @@ const SairaBold = ({
         marginBottom: mb,
         lineHeight: lh,
         fontWeight: fw,
-        color: color ? color : '#000000',
-        textAlign: textAlign ? 'right' : 'left',
-        fontFamily: Platform.OS === 'android' ? 'Saira-Bold' : 'Saira Bold',
-        textDecorationLine: isUnderLine ? 'underline' : "none",
+        paddingTop: mvs(1),
+        includeFontPadding: false,
+        color: color ? color : "#000000",
+        textAlign: textAlign ? "right" : "left",
+        fontFamily: Platform.OS === "android" ? "Saira-Bold" : "Saira Bold",
+        textDecorationLine: isUnderLine ? "underline" : "none",
         ...style,
-      }}>
+      }}
+    >
       {label}
       {props.children}
     </Text>
