@@ -2,10 +2,8 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { AuthProvider } from './src/Context/AuthContext';
 import Routes from './src/Navigation/Routes';
-import UpdateDeliveryStatus from './src/Screens/UpdateDeliveryStatus';
 
 const App = () => {
-
 
   // useEffect(() => {
   //   if (Platform.OS === 'android') {
@@ -17,8 +15,7 @@ const App = () => {
 
     <AuthProvider>
       <StatusBar barStyle={'dark-content'} />
-      {/* <Routes /> */}
-      <UpdateDeliveryStatus/>
+      <Routes />
     </AuthProvider>
   );
 };

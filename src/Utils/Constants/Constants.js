@@ -15,7 +15,8 @@ export default CONSTANTS = {
     AllOrders: 'AllOrders',
     RouteDetails: 'RouteDetails',
     PharmacyChats: 'PharmacyChats',
-    RouteName: "RouteName"
+    RouteName: "RouteName",
+    UpdateDeliveryStatus: "UpdateDeliveryStatus"
   },
   // Endpoints below
   ENDPOINT: {},

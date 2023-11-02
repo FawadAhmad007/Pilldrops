@@ -5,8 +5,22 @@ import images from "../../assets/images";
 import SairaBold from "../../typography/SairaBold-text";
 import SairaText from "../../typography/saira-text";
 import PhoneNumber from "./component/PhoneNumber";
+import { useNavigation } from "@react-navigation/native";
+import { Header } from "../../Components";
 
-const Design = ({ navigation }) => {
+const Design = () => {
+  const navigation = useNavigation()
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      header: () => <Header
+
+        title={"Update Delivery Status"}
+
+      />,
+    })
+  }, [navigation])
   return (
     <>
       <StatusBar backgroundColor={"#0B6699"} barStyle={"light-content"} />
@@ -78,7 +92,7 @@ const Design = ({ navigation }) => {
         </View>
       </View>
 
-      <View style={{ margin: mvs(8) }}>
+      <View style={{ margin: mvs(1) }}>
         <PhoneNumber label={"Phone Number"} number={"(909) 000 9999"} />
         <PhoneNumber label={"Cell Number"} number={"(909) 000 9999"} />
         <PhoneNumber label={"Work Number"} number={"(909) 000 9999"} />
