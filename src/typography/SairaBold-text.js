@@ -10,6 +10,7 @@ const SairaBold = ({
   mb,
   label,
   style,
+  pt,
   textAlign,
   numberOfLines = 1,
   size = mvs(10),
@@ -32,6 +33,10 @@ const SairaBold = ({
         marginBottom: mb,
         lineHeight: lh,
         fontWeight: fw,
+
+        paddingTop: mvs(1),
+        includeFontPadding: false,
+
         color: color ? color : "#000000",
         textAlign: textAlign ? "right" : "left",
         fontFamily: Platform.OS === "android" ? "Saira-Bold" : "Saira Bold",

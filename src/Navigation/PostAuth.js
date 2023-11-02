@@ -12,6 +12,7 @@ import {
 } from '../Screens';
 import PharmacyChats from '../Screens/PharmacyChats';
 import RouteName from '../Screens/RouteName';
+import UpdateDeliveryStatus from '../Screens/UpdateDeliveryStatus';
 
 const PostAuthDrawer = createDrawerNavigator();
 
@@ -24,6 +25,11 @@ const PreAuth = () => {
         drawerType: 'front',
       }}
       drawerContent={props => <DrawerPD {...props} />}>
+      {/* <PostAuthDrawer.Screen
+        name={SCREEN_NAME.UpdateDeliveryStatus}
+        component={UpdateDeliveryStatus}
+      /> */}
+
       <PostAuthDrawer.Screen
         name={SCREEN_NAME.RouteName}
         component={RouteName}

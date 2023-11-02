@@ -5,7 +5,6 @@ import Routes from './src/Navigation/Routes';
 
 const App = () => {
 
-
   // useEffect(() => {
   //   if (Platform.OS === 'android') {
   //     SplashScreen.hide();

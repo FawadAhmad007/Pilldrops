@@ -1,4 +1,6 @@
-const {StyleSheet, Platform} = require('react-native');
+import { mvs } from '../../config/metrices';
+
+const { StyleSheet, Platform } = require('react-native');
 
 const styles = StyleSheet.create({
   container: {
@@ -20,8 +22,9 @@ const styles = StyleSheet.create({
         ? 'Saira_Condensed-Bold'
         : 'Saira Condensed Bold',
     color: 'white',
-    fontSize: 20,
+    fontSize: mvs(15),
     fontWeight: '700',
+    includeFontPadding: false,
   },
   userName: {
     fontFamily:
