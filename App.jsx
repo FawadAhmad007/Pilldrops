@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { AuthProvider } from './src/Context/AuthContext';
 import Routes from './src/Navigation/Routes';
+import SignaturePad from './src/Screens/Signature';
 
 const App = () => {
 
@@ -15,7 +16,8 @@ const App = () => {
 
     <AuthProvider>
       <StatusBar barStyle={'dark-content'} />
-      <Routes />
+      <SignaturePad/>
+      {/* <Routes /> */}
     </AuthProvider>
   );
 };
