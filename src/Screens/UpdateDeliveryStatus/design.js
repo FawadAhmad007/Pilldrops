@@ -9,6 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Header } from "../../Components";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Status from "./component/Status";
+import styles from "./style";
 
 const Design = () => {
   const navigation = useNavigation();
@@ -24,17 +25,8 @@ const Design = () => {
   return (
     <>
       <StatusBar backgroundColor={"#0B6699"} barStyle={"light-content"} />
-      <ScrollView>
-        <View
-          style={{
-            alignSelf: "center",
-            padding: mvs(4),
-            backgroundColor: "#0B6699",
-            margin: mvs(5),
-            width: "60%",
-            borderRadius: mvs(8),
-          }}
-        >
+      <ScrollView style={styles.scrollContainer}>
+        <View style={styles.detailContainer}>
           <View style={{ flexDirection: "row" }}>
             <View>
               <SairaBold label={" Stop # 22"} fw={"700"} color={"#fff"} />
@@ -80,7 +72,7 @@ const Design = () => {
               size={12}
             />
           </SairaBold>
-          <View style={{ position: "absolute", bottom: 5, right: 0 }}>
+          <View style={styles.addressView}>
             <SairaBold
               label={"Apt #  45 C"}
               fw={"700"}
@@ -99,46 +91,8 @@ const Design = () => {
           <PhoneNumber label={"Work Number"} number={"(909) 000 9999"} />
         </View>
 
-        <View
-          style={{
-            width: "90%",
-            alignSelf: "center",
-            backgroundColor: "#F4F4F4",
-            borderRadius: mvs(8),
-            borderColor: "#fff",
-            borderWidth: mvs(1),
-            padding: mvs(5),
-            shadowColor: "#000",
-            marginTop: mvs(3),
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-
-            elevation: 5,
-          }}
-        >
-          <View
-            style={{
-              backgroundColor: "#05B321",
-              padding: mvs(6),
-              alignSelf: "flex-end",
-              borderRadius: mvs(2),
-              borderColor: "#fff",
-              borderWidth: mvs(1),
-              shadowOffset: {
-                width: 0,
-                height: 2,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 3.84,
-              elevation: 5,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+        <View style={styles.confirmContainer}>
+          <View style={styles.priceContainer}>
             <SairaBold
               label={"Copay : $ 19.99"}
               fw={"700"}
@@ -166,13 +120,7 @@ const Design = () => {
             onPress={() => setStatusCheck(3)}
           />
 
-          <View
-            style={{
-              flexDirection: "row",
-              marginTop: mvs(5),
-              justifyContent: "space-between",
-            }}
-          >
+          <View style={styles.patientView}>
             <SairaBold
               label={"Patient Is Requesting Councelling"}
               fw={"700"}
@@ -181,11 +129,7 @@ const Design = () => {
             />
             <View style={{ flexDirection: "row" }}>
               <TouchableOpacity
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  marginEnd: mvs(20),
-                }}
+                style={styles.yesBtn}
                 onPress={() => setCheckPatient(true)}
               >
                 <SairaBold
@@ -196,15 +140,10 @@ const Design = () => {
                   mr={mvs(4)}
                 />
                 <View
-                  hitSlop={7}
-                  style={{
-                    width: mvs(10),
-                    height: 10,
-                    backgroundColor: checkPatient ? "#000" : "#fff",
-                    borderRadius: mvs(2),
-                    borderWidth: mvs(1),
-                    borderColor: "#000",
-                  }}
+                  style={[
+                    styles.boxStyle,
+                    { backgroundColor: checkPatient ? "#000" : "#fff" },
+                  ]}
                 />
               </TouchableOpacity>
               <TouchableOpacity
@@ -220,56 +159,22 @@ const Design = () => {
                 />
                 <View
                   hitSlop={7}
-                  style={{
-                    width: mvs(10),
-                    height: 10,
-                    backgroundColor: !checkPatient ? "#000" : "#fff",
-                    borderRadius: mvs(2),
-                    borderWidth: mvs(1),
-                    borderColor: "#000",
-                  }}
+                  style={[
+                    styles.boxStyle,
+                    { backgroundColor: !checkPatient ? "#000" : "#fff" },
+                  ]}
                 />
               </TouchableOpacity>
             </View>
           </View>
         </View>
 
-        <View
-          style={{
-            marginVertical: mvs(8),
-            flexDirection: "row",
-            alignSelf: "center",
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            width: "90%",
-          }}
-        >
-          <View
-            style={{
-              paddingVertical: mvs(5),
-              paddingHorizontal: mvs(10),
-              backgroundColor: "#fff",
-              borderRadius: mvs(15),
-              borderWidth: mvs(1),
-              width: mvs(100),
-              borderColor: "#000",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+        <View style={styles.btnContainer}>
+          <TouchableOpacity style={styles.btnFace}>
             <SairaText label={"FACE TO FACE"} fw={"200"} color={"#000"} />
-          </View>
+          </TouchableOpacity>
 
-          <View
-            style={{
-              paddingVertical: mvs(10),
-              paddingHorizontal: mvs(15),
-              backgroundColor: "#0B6699",
-              borderRadius: mvs(10),
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <View style={styles.viewProof}>
             <SairaBold
               label={"Proof Of Delivery"}
               fw={"700"}
@@ -278,61 +183,16 @@ const Design = () => {
             />
           </View>
 
-          <View
-            style={{
-              paddingVertical: mvs(5),
-              paddingHorizontal: mvs(10),
-              backgroundColor: "#fff",
-              borderRadius: mvs(15),
-              borderWidth: mvs(1),
-              width: mvs(100),
-              borderColor: "#FF8B03",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
+          <TouchableOpacity
+            style={[styles.btnFace, { borderColor: "#FF8B03" }]}
           >
             <SairaText label={"Photo ID"} fw={"200"} color={"#FF8B03"} />
-          </View>
+          </TouchableOpacity>
         </View>
 
-        <View
-          style={{
-            padding: mvs(7),
-            width: "90%",
-            alignSelf: "center",
-            backgroundColor: "#F4F4F4",
-            borderRadius: mvs(8),
-            borderWidth: mvs(1),
-            borderColor: "#fff",
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-            elevation: 5,
-          }}
-        >
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <View
-              style={{
-                paddingVertical: mvs(5),
-                paddingHorizontal: mvs(10),
-                backgroundColor: "#fff",
-                borderRadius: mvs(5),
-                borderWidth: mvs(2),
-                borderColor: "#000",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row",
-              }}
-            >
+        <View style={styles.signtureContainer}>
+          <View style={styles.signBtnContainer}>
+            <View style={styles.signBtn}>
               <SairaBold
                 label={"Signature"}
                 fw={"700"}
@@ -343,28 +203,12 @@ const Design = () => {
               />
               <Image
                 source={images.Sign}
-                style={{
-                  width: mvs(25),
-                  height: mvs(25),
-                  marginHorizontal: mvs(5),
-                }}
+                style={styles.signImage}
                 resizeMode="contain"
               />
             </View>
 
-            <View
-              style={{
-                paddingVertical: mvs(5),
-                paddingHorizontal: mvs(10),
-                backgroundColor: "#fff",
-                borderRadius: mvs(5),
-                borderWidth: mvs(2),
-                borderColor: "#000",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row",
-              }}
-            >
+            <View style={styles.signBtn}>
               <SairaBold
                 label={"Signature On Delivery Slip"}
                 fw={"700"}
@@ -375,23 +219,13 @@ const Design = () => {
               />
               <Image
                 source={images.Paper}
-                style={{
-                  width: mvs(25),
-                  height: mvs(25),
-                  marginHorizontal: mvs(5),
-                }}
+                style={styles.signImage}
                 resizeMode="contain"
               />
             </View>
           </View>
 
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
+          <View style={styles.captureView}>
             <SairaBold
               label={"Send SMS Link To Get Signature"}
               fw={"700"}
@@ -416,13 +250,7 @@ const Design = () => {
               />
               <Image
                 source={images.Sent}
-                style={{
-                  width: mvs(12),
-                  height: mvs(12),
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                }}
+                style={styles.imageSent}
                 resizeMode="contain"
               />
             </View>
@@ -443,25 +271,13 @@ const Design = () => {
               />
               <Image
                 source={images.Read}
-                style={{
-                  width: mvs(15),
-                  height: mvs(15),
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                }}
+                style={styles.imageRead}
                 resizeMode="contain"
               />
             </View>
           </View>
 
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <View style={styles.captureView}>
             <SairaBold
               label={"Capture Images"}
               fw={"700"}
@@ -473,35 +289,20 @@ const Design = () => {
             <TouchableOpacity>
               <Image
                 source={images.CameraBlack}
-                style={{
-                  width: mvs(25),
-                  height: mvs(25),
-                  marginHorizontal: mvs(5),
-                }}
+                style={styles.imageCapture}
                 resizeMode="contain"
               />
             </TouchableOpacity>
             <TouchableOpacity>
               <Image
                 source={images.Photo}
-                style={{
-                  width: mvs(25),
-                  height: mvs(25),
-                  marginEnd: mvs(20),
-                  marginHorizontal: mvs(5),
-                }}
+                style={styles.imageCapture}
                 resizeMode="contain"
               />
             </TouchableOpacity>
           </View>
 
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <View style={styles.driveView}>
             <SairaBold
               label={"Driver Note"}
               fw={"700"}
@@ -510,26 +311,7 @@ const Design = () => {
               mb={mvs(15)}
               color={"#000"}
             />
-            <View
-              style={{
-                paddingVertical: mvs(5),
-                paddingHorizontal: mvs(10),
-                backgroundColor: "#fff",
-                borderRadius: mvs(15),
-                width: "70%",
-                borderWidth: mvs(1),
-                borderColor: "#000",
-                alignItems: "center",
-                justifyContent: "center",
-                shadowOffset: {
-                  width: 0,
-                  height: 2,
-                },
-                shadowOpacity: 0.25,
-                shadowRadius: 3.84,
-                elevation: 5,
-              }}
-            >
+            <View style={styles.driveDetail}>
               <SairaBold
                 label={"Delivery Note"}
                 fw={"700"}
@@ -555,15 +337,7 @@ const Design = () => {
               />
             </View>
           </View>
-          <TouchableOpacity
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              marginEnd: mvs(20),
-              justifyContent: "flex-end",
-              marginTop: mvs(9),
-            }}
-          >
+          <TouchableOpacity style={styles.checkPharmacy}>
             <SairaBold
               label={"Send To Pharmacy"}
               fw={"700"}
@@ -571,50 +345,16 @@ const Design = () => {
               color={"#000"}
               mr={mvs(4)}
             />
-            <View
-              hitSlop={7}
-              style={{
-                width: mvs(10),
-                height: 10,
-                backgroundColor: "#000",
-                borderRadius: mvs(2),
-                borderWidth: mvs(1),
-                borderColor: "#000",
-              }}
-            />
+            <View style={[styles.boxStyle, { backgroundColor: "#000" }]} />
           </TouchableOpacity>
         </View>
 
-        <View
-          style={{
-            padding: mvs(7),
-            width: "90%",
-            alignSelf: "center",
-            backgroundColor: "#F4F4F4",
-            borderRadius: mvs(8),
-            marginVertical: mvs(12),
-            borderWidth: mvs(1),
-            borderColor: "#fff",
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-            elevation: 5,
-          }}
-        >
+        <View style={styles.contectView}>
           <View
-            style={{
-              paddingVertical: mvs(10),
-              paddingHorizontal: mvs(15),
-              backgroundColor: "#0B6699",
-              borderRadius: mvs(10),
-              alignItems: "center",
-              justifyContent: "center",
-              alignSelf: "center",
-              marginBottom: mvs(10),
-            }}
+            style={[
+              styles.viewProof,
+              { alignSelf: "center", marginBottom: mvs(10) },
+            ]}
           >
             <SairaBold
               label={"Contact Pharmacy"}
@@ -637,6 +377,91 @@ const Design = () => {
             label={"Pharmacy Emergency Contact"}
             number={"(909) 000 9999"}
           />
+        </View>
+
+        <View style={styles.btnView}>
+          <TouchableOpacity
+            style={[styles.btnStyle, { backgroundColor: "#FB1001" }]}
+          >
+            <SairaBold label={"Failed"} fw={"700"} size={12} color={"#fff"} />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.btnStyle, { backgroundColor: "#05B321" }]}
+          >
+            <SairaBold
+              label={"Delivered"}
+              fw={"700"}
+              size={12}
+              color={"#fff"}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.reasonView}>
+          <View style={styles.reasonContainer}>
+            <SairaBold
+              label={"Reason"}
+              fw={"700"}
+              size={12}
+              isUnderLine={true}
+              color={"#000"}
+              mr={mvs(5)}
+              ml={mvs(5)}
+            />
+            <SairaText
+              label={"Dropdown and option to write"}
+              fw={"200"}
+              color={"#000"}
+              lh={14}
+              size={12}
+            />
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <TouchableOpacity
+              style={[
+                styles.btnFace,
+                {
+                  flexDirection: "row",
+                  alignItems: "center",
+                  width: mvs(70),
+                  marginEnd: mvs(10),
+                },
+              ]}
+            >
+              <SairaText label={"Back"} fw={"200"} color={"#000"} />
+              <Image
+                source={images.BackArrow}
+                style={{ width: mvs(10), height: mvs(10), marginStart: mvs(2) }}
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.btnFace, { width: mvs(70) }]}>
+              <SairaText label={"Save"} fw={"200"} color={"#1560BD"} />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.contectView}>
+          <View
+            style={[
+              styles.viewProof,
+              { marginTop: mvs(-25), alignSelf: "center" },
+            ]}
+          >
+            <SairaBold
+              label={"Contact Pharmacy"}
+              fw={"700"}
+              size={12}
+              color={"#fff"}
+            />
+          </View>
+          <PhoneNumber label={"Contact Facility"} number={"(909) 000 9999"} />
         </View>
       </ScrollView>
     </>

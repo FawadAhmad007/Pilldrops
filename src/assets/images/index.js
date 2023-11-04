@@ -29,7 +29,7 @@ const Sign = require("./sign.png");
 
 const Pen = require("./pen.png");
 const Message = require("./message.png");
-
+const BackArrow = require("./backArrow.png");
 const Time = require("./time.png");
 const CameraBlack = require("./camerv.png");
 const Photo = require("./photo.png");
@@ -40,6 +40,7 @@ export default Images = {
   LoginBg,
   SignRecive,
   Photo,
+  BackArrow,
   LogoFullImg,
   SignSend,
   CameraBlack,

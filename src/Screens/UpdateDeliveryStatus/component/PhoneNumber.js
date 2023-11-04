@@ -12,11 +12,12 @@ const PhoneNumber = ({ label, number }) => {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        marginHorizontal: mvs(25),
+        marginHorizontal: mvs(15),
+        alignItems: "center",
         marginVertical: mvs(2),
       }}
     >
-      <View style={{ width: "30%" }}>
+      <View style={{ width: "50%" }}>
         <SairaText label={label} fw={"200"} lh={16} size={12} />
       </View>
       <View>
