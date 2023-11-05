@@ -28,11 +28,14 @@ import ChatFilter from "../../Components/ChatFilter";
 import RouteNameHeader from "../../Components/RouteNameHeader/Header";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import RouteNameCard from "../../Components/RouteNameCard";
+import UpdateDeliveryStatus from "../UpdateDeliveryStatus";
+import { Constants } from "../../Utils";
 
 const Design = () => {
   const today = new Date();
   const { logout } = useContext(AuthContext);
   const navigation = useNavigation();
+  const { SCREEN_NAME } = Constants;
   const data = [
     {
       id: "lad9d9d",
@@ -76,7 +79,15 @@ const Design = () => {
   }, [navigation]);
 
   const renderItem = ({ item, index }) => {
-    return <RouteNameCard item={item} index={index} />;
+    return (
+      <RouteNameCard
+        item={item}
+        index={index}
+        onPresUpdate={() =>
+          navigation.navigate(SCREEN_NAME.UpdateDeliveryStatus)
+        }
+      />
+    );
   };
 
   return (

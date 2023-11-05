@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import DrawerPD from '../Components/DrawerPD';
-import { Constants } from '../Utils';
+import React, { useContext } from "react";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import DrawerPD from "../Components/DrawerPD";
+import { Constants } from "../Utils";
 import {
   AllOrders,
   AllRoutes,
@@ -9,10 +9,10 @@ import {
   DeliveryTeam,
   OrderPickupScan,
   RouteDetails,
-} from '../Screens';
-import PharmacyChats from '../Screens/PharmacyChats';
-import RouteName from '../Screens/RouteName';
-import UpdateDeliveryStatus from '../Screens/UpdateDeliveryStatus';
+} from "../Screens";
+import PharmacyChats from "../Screens/PharmacyChats";
+import RouteName from "../Screens/RouteName";
+import UpdateDeliveryStatus from "../Screens/UpdateDeliveryStatus";
 
 const PostAuthDrawer = createDrawerNavigator();
 
@@ -21,14 +21,15 @@ const PreAuth = () => {
   return (
     <PostAuthDrawer.Navigator
       screenOptions={{
-        drawerStyle: { backgroundColor: 'white' },
-        drawerType: 'front',
+        drawerStyle: { backgroundColor: "white" },
+        drawerType: "front",
       }}
-      drawerContent={props => <DrawerPD {...props} />}>
-      {/* <PostAuthDrawer.Screen
+      drawerContent={(props) => <DrawerPD {...props} />}
+    >
+      <PostAuthDrawer.Screen
         name={SCREEN_NAME.UpdateDeliveryStatus}
         component={UpdateDeliveryStatus}
-      /> */}
+      />
 
       <PostAuthDrawer.Screen
         name={SCREEN_NAME.RouteName}
