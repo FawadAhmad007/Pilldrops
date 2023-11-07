@@ -6,7 +6,7 @@ import images from "../../assets/images";
 import SairaCondensedBold from "../../typography/SairaCondensedBold-text";
 import { styles } from "./style";
 
-const Signature = () => {
+const Signature = ({ onCancel }) => {
   const ref = useRef();
 
   const handleOK = (signature) => {
@@ -46,7 +46,9 @@ const Signature = () => {
         <View style={styles.lineStyle} />
       </View>
       <View style={styles.row}>
-        <TouchableOpacity style={styles.btnStyle}>
+        <TouchableOpacity
+          onPress={onCancel}
+          style={styles.btnStyle}>
           <SairaCondensedBold
             label={"Cancel"}
             color={"#000"}

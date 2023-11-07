@@ -27,6 +27,10 @@ const PreAuth = () => {
       drawerContent={(props) => <DrawerPD {...props} />}
     >
       <PostAuthDrawer.Screen
+        name={SCREEN_NAME.AllRoutes}
+        component={AllRoutes}
+      />
+      <PostAuthDrawer.Screen
         name={SCREEN_NAME.UpdateDeliveryStatus}
         component={UpdateDeliveryStatus}
       />
@@ -36,10 +40,6 @@ const PreAuth = () => {
         component={RouteName}
       />
 
-      <PostAuthDrawer.Screen
-        name={SCREEN_NAME.AllRoutes}
-        component={AllRoutes}
-      />
       <PostAuthDrawer.Screen
         name={SCREEN_NAME.DeliveryTeam}
         component={DeliveryTeam}

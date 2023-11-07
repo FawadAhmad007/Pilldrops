@@ -16,8 +16,8 @@ const App = () => {
 
     <AuthProvider>
       <StatusBar barStyle={'dark-content'} />
-      {/* <Routes /> */}
-<Contact/>
+      <Routes />
+
     </AuthProvider>
   );
 };

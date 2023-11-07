@@ -10,11 +10,15 @@ import { Header } from "../../Components";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Status from "./component/Status";
 import styles from "./style";
+import Signature from "../../Components/Signature/Signature";
+import { Constants } from "../../Utils";
 
 const Design = () => {
   const navigation = useNavigation();
   const [statusCheck, setStatusCheck] = useState(1);
   const [checkPatient, setCheckPatient] = useState(false);
+  const [signatureOpen, setSignatureOpen] = useState(false)
+  const { SCREEN_NAME } = Constants;
 
   useEffect(() => {
     navigation.setOptions({
@@ -192,7 +196,9 @@ const Design = () => {
 
         <View style={styles.signtureContainer}>
           <View style={styles.signBtnContainer}>
-            <View style={styles.signBtn}>
+            <TouchableOpacity
+              onPress={() => setSignatureOpen(true)}
+              style={styles.signBtn}>
               <SairaBold
                 label={"Signature"}
                 fw={"700"}
@@ -206,7 +212,7 @@ const Design = () => {
                 style={styles.signImage}
                 resizeMode="contain"
               />
-            </View>
+            </TouchableOpacity>
 
             <View style={styles.signBtn}>
               <SairaBold
@@ -372,10 +378,12 @@ const Design = () => {
           <PhoneNumber
             label={"Pharmacy Phone Number"}
             number={"(909) 000 9999"}
+            goToChat={() => navigation.navigate(SCREEN_NAME.PharmacyChats)}
           />
           <PhoneNumber
             label={"Pharmacy Emergency Contact"}
             number={"(909) 000 9999"}
+            goToChat={() => navigation.navigate(SCREEN_NAME.PharmacyChats)}
           />
         </View>
 
@@ -463,7 +471,17 @@ const Design = () => {
           </View>
           <PhoneNumber label={"Contact Facility"} number={"(909) 000 9999"} />
         </View>
+
       </ScrollView>
+      {signatureOpen &&
+        <View style={styles.alertView}>
+
+          <Signature
+            onCancel={() => setSignatureOpen(false,)}
+          />
+        </View>
+
+      }
     </>
   );
 };

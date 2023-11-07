@@ -1,11 +1,11 @@
-import { View, Image } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { mvs } from "../../../config/metrices";
 import SairaBold from "../../../typography/SairaBold-text";
 import SairaText from "../../../typography/saira-text";
 import images from "../../../assets/images";
 
-const PhoneNumber = ({ label, number }) => {
+const PhoneNumber = ({ label, number, goToChat }) => {
   return (
     <View
       style={{
@@ -35,11 +35,15 @@ const PhoneNumber = ({ label, number }) => {
           resizeMode="contain"
           style={{ width: mvs(13), height: mvs(13), marginEnd: mvs(15) }}
         />
-        <Image
-          source={images.Message}
-          resizeMode="contain"
-          style={{ width: mvs(13), height: mvs(13) }}
-        />
+        <TouchableOpacity
+          onPress={goToChat}
+        >
+          <Image
+            source={images.Message}
+            resizeMode="contain"
+            style={{ width: mvs(13), height: mvs(13) }}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );

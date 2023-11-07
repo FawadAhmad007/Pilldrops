@@ -240,6 +240,18 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
+  alertView: {
+    position: "absolute",
+    //flex: 1,
+    height: "100%",
+    width: "100%",
+    justifyContent: "center",
+    //alignItems: "center",
+    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    paddingHorizontal: mvs(27),
+    zIndex: 1,
+
+  }
 });
 
 export default styles;
