@@ -7,5 +7,7 @@ export const styles = StyleSheet.create({
     container: {
         paddingHorizontal: mvs(8),
         backgroundColor: 'transparent',
+        paddingTop: mvs(10)
+
     },
 })

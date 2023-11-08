@@ -1,10 +1,11 @@
-import React from "react";
-import { StatusBar } from "react-native";
-import { AuthProvider } from "./src/Context/AuthContext";
-import Routes from "./src/Navigation/Routes";
-import { SelectionPharmecy } from "./src/Screens";
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { AuthProvider } from './src/Context/AuthContext';
+import Routes from './src/Navigation/Routes';
+import Contact from './src/Components/Contact/Contact';
 
 const App = () => {
+
   // useEffect(() => {
   //   if (Platform.OS === 'android') {
   //     SplashScreen.hide();
@@ -12,10 +13,11 @@ const App = () => {
   // }, []);
 
   return (
+
     <AuthProvider>
-      <StatusBar barStyle={"dark-content"} />
-      {/* <Routes /> */}
-      {<SelectionPharmecy />}
+      <StatusBar barStyle={'dark-content'} />
+      <Routes />
+
     </AuthProvider>
   );
 };

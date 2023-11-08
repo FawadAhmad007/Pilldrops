@@ -66,10 +66,7 @@ const RouteDetails = ({ navigation }) => {
                                         <ICONS.PencilIcon color="white" />
                                     </View>
 
-
-
                                 </View>
-
 
                                 <View style={styles.countContainer} >
                                     <ICONS.AddressIcon color="white" />
@@ -100,7 +97,7 @@ const RouteDetails = ({ navigation }) => {
                         <ButtonPD plain={true} title={"Re-optimize Route "} />
                         <View style={{ flexDirection: "row", gap: 10 }} >
                             <ButtonPD onPress={handlePressGoback} routeDetail={true} title={"Go Back"} rightIcon={<ICONS.ChevronIcon />} bgClr="black" />
-                            <ButtonPD routeDetail={true} title={"Start Route"} rightIcon={<ICONS.PaperPlaneIcon />} />
+                            <ButtonPD onPress={() => navigation.navigate(Constants.SCREEN_NAME.RouteName)} routeDetail={true} title={"Start Route"} rightIcon={<ICONS.PaperPlaneIcon />} />
                         </View>
                     </View>
                 </View>

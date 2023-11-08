@@ -15,7 +15,7 @@ import SairaBold from "../../typography/SairaBold-text";
 import SairaCondensedBold from "../../typography/SairaCondensedBold-text";
 import RNCB from "../RouteNameCardButton";
 
-const RouteNameCard = ({ item, index }) => {
+const RouteNameCard = ({ item, index, onPresUpdate }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => {}}>
@@ -189,7 +189,11 @@ const RouteNameCard = ({ item, index }) => {
           }}
         >
           <RNCB text={"Arrived"} color={"#0B6699"} />
-          <RNCB text={"Update Status"} color={"#05B321"} />
+          <RNCB
+            text={"Update Status"}
+            color={"#05B321"}
+            onPress={onPresUpdate}
+          />
           <RNCB text={"Navigate"} color={"#FE9604"} image={true} />
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Image
