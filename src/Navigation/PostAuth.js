@@ -9,6 +9,8 @@ import {
   DeliveryTeam,
   OrderPickupScan,
   RouteDetails,
+  SelectionPharmecy,
+
 } from "../Screens";
 import PharmacyChats from "../Screens/PharmacyChats";
 import RouteName from "../Screens/RouteName";
@@ -27,9 +29,14 @@ const PreAuth = () => {
       drawerContent={(props) => <DrawerPD {...props} />}
     >
       <PostAuthDrawer.Screen
+        name={SCREEN_NAME.SelectionPharmecy}
+        component={SelectionPharmecy}
+      />
+      <PostAuthDrawer.Screen
         name={SCREEN_NAME.AllRoutes}
         component={AllRoutes}
       />
+
       <PostAuthDrawer.Screen
         name={SCREEN_NAME.UpdateDeliveryStatus}
         component={UpdateDeliveryStatus}

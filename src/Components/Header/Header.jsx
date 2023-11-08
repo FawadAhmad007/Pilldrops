@@ -10,7 +10,7 @@ import { Constants } from '../../Utils'
 import { AuthContext } from '../../Context/AuthContext'
 import images from '../../assets/images'
 
-const Header = ({ onPress, title, value, onChangeText, showBtn = false, type, time }) => {
+const Header = ({ onPress, title, value, onChangeText, showBtn = false, isSearch = true, type, time, title2 = "" }) => {
     const navigation = useNavigation();
     const { getCameraPermission } = useContext(AuthContext)
 
@@ -68,12 +68,12 @@ const Header = ({ onPress, title, value, onChangeText, showBtn = false, type, ti
                         style={styles.logoImg}
                     />
                 </TouchableOpacity>
-                <View style={{ width: "50%", alignItems: "center" }} >
+                <View style={{ width: "80%", alignItems: "center" }} >
                     <Text style={styles.titleTxt} >{title}</Text>
-                    <SearchInput
+                    {isSearch ? <SearchInput
                         onChangeText={onChangeText}
                         value={value}
-                    />
+                    /> : title2 ? <Text style={styles.titleTxt} >{title2}</Text> : null}
                 </View>
                 {
                     showBtn

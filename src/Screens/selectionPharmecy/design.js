@@ -5,13 +5,25 @@ import SairaBold from "../../typography/SairaBold-text";
 import SairaText from "../../typography/saira-text";
 import SairaCondensedRegular from "../../typography/SairaCondensedRegular-text";
 import SairaCondensedBold from "../../typography/SairaCondensedBold-text";
+import { useNavigation } from "@react-navigation/native";
+import RouteNameHeader from "../../Components/RouteNameHeader/Header";
+import { Header } from "../../Components";
+import { StatusBar } from "react-native";
 
-const SelectionPharmecy = ({ navigation }) => {
+const Design = () => {
+  const navigation = useNavigation()
+  useEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      header: () => <Header isSearch={false} title2={'SELECT PHARMACY'} title={"10-16-2023 TO 10-22-2023 INVOICE"} />,
+    });
+  }, [navigation]);
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.contentContainerStyle}
       style={styles.scrollView}>
+      <StatusBar backgroundColor={'#0B6699'} />
       <View style={styles?.pharmacyInfoContainer}>
         <SairaBold
           style={styles?.pharmacyName}
@@ -200,4 +212,4 @@ const SelectionPharmecy = ({ navigation }) => {
   );
 };
 
-export default SelectionPharmecy;
+export default Design;
