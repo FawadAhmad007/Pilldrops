@@ -7,7 +7,12 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "pod-reinstall": "cd ios && pod deintegrate && pod cache clean --all && rm -rf Podfile.lock && pod install",
+    "android-apk": "cd android && ./gradlew assembleRelease && cd ..",
+    "android-aab": "cd android && ./gradlew clean && ./gradlew bundleRelease && cd .. ",
+    "clean": "rm -rf ~/Library/Developer/Xcode/DerivedData && cd android && ./gradlew clean && cd .. && yarn cache clean --f && npm cache clean --f && watchman watch-del-all && watchman shutdown-server",
+    "media": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4.5.1",

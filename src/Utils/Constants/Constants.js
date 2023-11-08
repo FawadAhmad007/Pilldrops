@@ -17,6 +17,8 @@ export default CONSTANTS = {
     PharmacyChats: "PharmacyChats",
     RouteName: "RouteName",
     UpdateDeliveryStatus: "UpdateDeliveryStatus",
+    SelectionPharmecy: "SelectionPharmecy",
+
   },
   // Endpoints below
   ENDPOINT: {},
@@ -57,10 +59,8 @@ export const DRAWER_DATA = [
   {
     title: "Delivery Reports",
     data: [
-      {
-        title: "All Orders   (Weekly Batch)",
-        route: CONSTANTS.SCREEN_NAME.AllOrders,
-      },
+      { title: "All Orders   (Weekly Batch)", route: CONSTANTS.SCREEN_NAME.AllOrders },
+
       { title: "My Orders  (Weekly Batch)", route: "SCREEN NAME HERE" },
       { title: "Weekly Invoice", route: "SCREEN NAME HERE" },
     ],
