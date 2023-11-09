@@ -18,7 +18,7 @@ export default CONSTANTS = {
     RouteName: "RouteName",
     UpdateDeliveryStatus: "UpdateDeliveryStatus",
     SelectionPharmecy: "SelectionPharmecy",
-
+    ClientChat: "ClientChat",
   },
   // Endpoints below
   ENDPOINT: {},
@@ -29,6 +29,10 @@ export const DRAWER_DATA = [
   {
     title: "PillDrop Delivery Team",
     route: CONSTANTS.SCREEN_NAME.DeliveryTeam,
+  },
+  {
+    title: "ClientChat",
+    route: CONSTANTS.SCREEN_NAME.ClientChat,
   },
   {
     title: "Package Pickup Scan",
