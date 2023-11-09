@@ -11,10 +11,12 @@ import images from '../../assets/images'
 import { mvs } from '../../config/metrices'
 import SairaCondensedRegular from '../../typography/SairaCondensedRegular-text'
 import ChatFilter from '../../Components/ChatFilter'
+import { Constants } from '../../Utils'
 
 const Design = () => {
     const today = new Date();
     const { logout } = useContext(AuthContext)
+    const { SCREEN_NAME } = Constants;
     const navigation = useNavigation()
     const data = [{
         id: "lad9d9d",
@@ -59,6 +61,7 @@ const Design = () => {
             <PharmacyChatsCard
                 item={item}
                 index={index}
+                onPress={() => navigation.navigate(SCREEN_NAME.ClientChat)}
             />
         )
     }

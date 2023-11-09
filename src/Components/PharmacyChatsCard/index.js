@@ -13,10 +13,10 @@ import SairaText from '../../typography/saira-text';
 import SairaCondensedRegular from '../../typography/SairaCondensedRegular-text';
 import SairaBold from '../../typography/SairaBold-text';
 
-const PharmacyChatsCard = ({ item }) => {
+const PharmacyChatsCard = ({ item, onPress }) => {
     const navigation = useNavigation()
     return (
-        <TouchableOpacity onPress={() => { }}>
+        <TouchableOpacity onPress={onPress}>
             <View style={styles.containerStyle} >
                 {/* Row 1 */}
                 <View style={styles.row_1} >

@@ -21,7 +21,7 @@ const Design = () => {
   const data = [
     {
       name: "SERRANO, MANO",
-      avatar: images.Dummy,
+      avatar: images.Profile,
       date: "10-24-2023 12:32AM",
       message: "Hi Alexa! What's Up?",
       from: true,
@@ -30,7 +30,7 @@ const Design = () => {
     },
     {
       name: "SERRANO, MANO",
-      avatar: images.Dummy,
+      avatar: images.Profile,
       date: "10-24-2023 12:32AM",
       message: "Hi Alexa! What's Up?",
       from: false,
@@ -39,7 +39,7 @@ const Design = () => {
     },
     {
       name: "SERRANO, MANO",
-      avatar: images.Dummy,
+      avatar: images.Profile,
       date: "10-24-2023 12:32AM",
       message: "Hi Alexa! What's Up?",
       from: true,
@@ -48,7 +48,7 @@ const Design = () => {
     },
     {
       name: "SERRANO, MANO",
-      avatar: images.Dummy,
+      avatar: images.Profile,
       date: "10-24-2023 12:32AM",
       message: "Hi Alexa! What's Up?",
       from: false,

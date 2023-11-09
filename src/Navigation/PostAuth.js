@@ -27,9 +27,9 @@ const PreAuth = () => {
         drawerType: "front",
       }}
       drawerContent={(props) => <DrawerPD {...props} />}>
-      <PostAuthDrawer.Screen name={SCREEN_NAME.SelectionPharmecy} component={SelectionPharmecy} />
-      <PostAuthDrawer.Screen name={SCREEN_NAME.ClientChat} component={ClientChat} />
       <PostAuthDrawer.Screen name={SCREEN_NAME.AllRoutes} component={AllRoutes} />
+      <PostAuthDrawer.Screen name={SCREEN_NAME.ClientChat} component={ClientChat} />
+      <PostAuthDrawer.Screen name={SCREEN_NAME.SelectionPharmecy} component={SelectionPharmecy} />
 
       <PostAuthDrawer.Screen
         name={SCREEN_NAME.UpdateDeliveryStatus}
