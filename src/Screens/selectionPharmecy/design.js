@@ -1,4 +1,4 @@
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, TouchableOpacity } from "react-native";
 import React, { useEffect } from "react";
 import styles from "./styles";
 import SairaBold from "../../typography/SairaBold-text";
@@ -11,11 +11,17 @@ import { Header } from "../../Components";
 import { StatusBar } from "react-native";
 
 const Design = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   useEffect(() => {
     navigation.setOptions({
       headerShown: true,
-      header: () => <Header isSearch={false} title2={'SELECT PHARMACY'} title={"10-16-2023 TO 10-22-2023 INVOICE"} />,
+      header: () => (
+        <Header
+          isSearch={false}
+          title2={"SELECT PHARMACY"}
+          title={"10-16-2023 TO 10-22-2023 INVOICE"}
+        />
+      ),
     });
   }, [navigation]);
   return (
@@ -23,7 +29,7 @@ const Design = () => {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.contentContainerStyle}
       style={styles.scrollView}>
-      <StatusBar backgroundColor={'#0B6699'} />
+      <StatusBar backgroundColor={"#0B6699"} />
       <View style={styles?.pharmacyInfoContainer}>
         <SairaBold
           style={styles?.pharmacyName}
@@ -205,9 +211,9 @@ const Design = () => {
           <SairaBold label={"Sign Here"} size={18} color={"#1F1C1C"} fw={"800"} lh={25.18} />
         </View>
       </View>
-      <View style={styles?.saveButton}>
-        <SairaText label={"Save"} size={14} color={"#1F1C1C"} fw={"800"} lh={25.18} />
-      </View>
+      <TouchableOpacity style={styles?.saveButton}>
+        <SairaText label={"Save"} size={14} color={"#1F1C1C"} fw={"800"} lh={20} />
+      </TouchableOpacity>
     </ScrollView>
   );
 };

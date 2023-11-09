@@ -1,5 +1,5 @@
 const { StyleSheet } = require("react-native");
-import { moderateScale, scale, verticalScale } from "react-native-size-matters";
+import { mvs } from "../../config/metrices";
 
 const styles = StyleSheet.create({
   contentContainerStyle: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     height: "8%",
   },
   addressContainer: {
-    marginHorizontal: scale(16),
+    marginHorizontal: mvs(16),
   },
   pharmacyInfoContainer: {
     alignItems: "center",
@@ -22,65 +22,67 @@ const styles = StyleSheet.create({
   orderSummaryContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: scale(16),
-    marginTop: verticalScale(5),
+    marginHorizontal: mvs(16),
+    marginTop: mvs(5),
     alignItems: "baseline",
   },
   pharmacySectionContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: scale(16),
-    marginTop: verticalScale(5),
+    marginHorizontal: mvs(16),
+    marginTop: mvs(5),
     alignItems: "baseline",
   },
   signContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: scale(18),
-    marginTop: verticalScale(5),
+    marginHorizontal: mvs(18),
+    marginTop: mvs(5),
   },
   sign: {
     borderWidth: 1,
-    width: scale(180),
+    width: mvs(180),
     justifyContent: "center",
-    height: verticalScale(45),
+    height: mvs(45),
     alignItems: "center",
-    marginTop: verticalScale(5),
+    marginTop: mvs(5),
+    borderRadius: mvs(4),
   },
   orderContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: scale(16),
+    marginHorizontal: mvs(16),
     alignItems: "baseline",
   },
   saveButton: {
     alignSelf: "flex-end",
     borderWidth: 1,
-    width: scale(50),
-    justifyContent: "center",
-    height: verticalScale(19),
+    width: mvs(50),
+    // justifyContent: "center",
+    height: mvs(24),
     alignItems: "center",
-    marginRight: scale(18),
-    marginTop: verticalScale(20),
+    marginRight: mvs(18),
+    marginTop: mvs(20),
+    borderRadius: mvs(4),
   },
   lineStyle: {
-    marginHorizontal: scale(16),
-    height: moderateScale(2),
+    marginHorizontal: mvs(16),
+    height: mvs(2),
     backgroundColor: "#1F1C1C",
     alignSelf: "center",
-    width: scale(160),
+    width: mvs(175),
   },
   lineStyle2: {
-    marginHorizontal: scale(16),
-    height: moderateScale(2),
+    marginHorizontal: mvs(16),
+    height: mvs(2),
     backgroundColor: "#1F1C1C",
     alignSelf: "center",
-    width: scale(130),
+    width: mvs(140),
   },
   lineStyle3: {
-    height: moderateScale(1),
+    height: mvs(1),
     backgroundColor: "#1F1C1C",
-    width: scale(180),
+    width: mvs(180),
     alignSelf: "flex-end",
   },
 });
