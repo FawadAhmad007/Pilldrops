@@ -4,6 +4,7 @@ import React, {  useEffect, useState } from 'react';
 import { Image } from '@rneui/base';
 import styles from './styles';
 import { InputPD } from '../../Components';
+import { login } from '../../Utils/Requests/Requests';
 
 const Login = () => {
     const [state, setState] = useState({
@@ -24,13 +25,27 @@ const Login = () => {
     const handleOnPressLogin = async () => {
         if (allGood()) {
             setState({ ...state, loading: true })
+            let payload={ "email": state.userName,
+            "password": state.password}
             setTimeout(() => {
-                setState({ ...state, loading: !true })
+               login(payload).then(res => {
+                if (res?.data?.statusCode === 200) {
+                    console.log(res?.data?.statusCode);
+                    setState({ ...state, loading: !true })
+                } else {
+                    console.log(res?.data?.statusCode);
+                    setState({ ...state, loading: !true })
+                }
+              })
+              .catch(err => {
+               console.log("error",err?.message)
+               setState({ ...state, loading: !true })
+               setErrorMessage()
+              });
             }, 1000);
             return;
         }
-        setState({ ...state, loading: !true })
-        setErrorMessage()
+
     }
 
     const setErrorMessage = () => {
