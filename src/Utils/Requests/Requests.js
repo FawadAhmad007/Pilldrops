@@ -5,7 +5,6 @@ import * as CONSTANTS from "../Constants/ApiConstants";
 const token = store.getState()?.root?.auth?.token;
 
 export const login = async (data) => {
-  console.log(CONSTANTS?.BASE_URL + CONSTANTS?.END_POINT?.LOGIN);
   const config = postConfig(
     data,
     CONSTANTS?.BASE_URL + CONSTANTS?.END_POINT?.LOGIN
