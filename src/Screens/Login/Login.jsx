@@ -5,8 +5,12 @@ import { Image } from '@rneui/base';
 import styles from './styles';
 import { InputPD } from '../../Components';
 import { login } from '../../Utils/Requests/Requests';
+import {useSelector, useDispatch} from 'react-redux';
+import { AuthSilce } from '../../Utils/Redux/reducer/AuthSlice';
+
 
 const Login = () => {
+    const dispatch = useDispatch();
     const [state, setState] = useState({
         userName: null,
         password: null,
@@ -27,22 +31,17 @@ const Login = () => {
             setState({ ...state, loading: true })
             let payload={ "email": state.userName,
             "password": state.password}
-            setTimeout(() => {
+
                login(payload).then(res => {
-                if (res?.data?.statusCode === 200) {
-                    console.log(res?.data?.statusCode);
+                dispatch(AuthSilce?.actions?.ADD_TOKKEN(res?.data?.access));
                     setState({ ...state, loading: !true })
-                } else {
-                    console.log(res?.data?.statusCode);
-                    setState({ ...state, loading: !true })
-                }
               })
               .catch(err => {
                console.log("error",err?.message)
                setState({ ...state, loading: !true })
                setErrorMessage()
               });
-            }, 1000);
+
             return;
         }
 

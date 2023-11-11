@@ -12,7 +12,6 @@ import images from '../../assets/images'
 
 const Header = ({ onPress, title, value, onChangeText, showBtn = false, isSearch = true, type, time, title2 = "" }) => {
     const navigation = useNavigation();
-    const { getCameraPermission } = useContext(AuthContext)
 
     const handleClickScanner = async () => {
         const hasPermission = await getCameraPermission()
