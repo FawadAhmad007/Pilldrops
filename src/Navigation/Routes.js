@@ -6,7 +6,7 @@ import PostAuth from "./PostAuth";
 import { ActivityIndicator, View } from "react-native";
 
 const Routes = () => {
-  const { token } = useSelector((state) => state.auth);;
+  const { token } = useSelector((state) => state.auth);
   console.log("Redux Tokken------>", token);
 
   // return (
@@ -17,7 +17,7 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-      {token == null ? <PreAuth /> : <PostAuth />}
+      {token == undefined ? <PreAuth /> : <PostAuth />}
     </NavigationContainer>
   );
 };
