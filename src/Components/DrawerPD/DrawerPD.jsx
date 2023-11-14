@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import {
     DrawerContentScrollView,
 } from '@react-navigation/drawer';
-import { AuthContext } from '../../Context/AuthContext';
+
 import { Pressable, TouchableOpacity, View } from 'react-native';
 import { Image, Text } from '@rneui/base';
 //import { LogoFullImg, UserImg } from '../../Assets/images';
@@ -13,7 +13,6 @@ import { useNavigation } from '@react-navigation/native';
 import { DRAWER_DATA } from '../../Utils/Constants/Constants';
 
 const DrawerPD = props => {
-    const { logout } = useContext(AuthContext)
     const navigation = useNavigation();
     const [expand, setExpand] = useState({
         1: !false,
@@ -60,7 +59,7 @@ const DrawerPD = props => {
                         <View key={item + i} style={{ borderWidth: 0, }} >
                             <View style={[styles.drawerTitleContainer, { borderTopWidth: i === 0 ? 0 : 1 }]} >
                                 <Pressable
-                                    onPress={item.title === "Logout" ? logout : () => handlePressTitle(item, i)}
+                                    // onPress={item.title === "Logout" ? logout : () => handlePressTitle(item, i)}
                                     style={{ flexDirection: "row", alignItems: "center" }}
                                 >
                                     <View style={styles.filler} />

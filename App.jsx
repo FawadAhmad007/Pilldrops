@@ -1,8 +1,9 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { AuthProvider } from './src/Context/AuthContext';
 import Routes from './src/Navigation/Routes';
-import Contact from './src/Components/Contact/Contact';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
+import {persistor, store} from './src/Utils/Redux/store/Store';
 
 const App = () => {
 
@@ -13,12 +14,12 @@ const App = () => {
   // }, []);
 
   return (
-
-    <AuthProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
       <StatusBar barStyle={'dark-content'} />
       <Routes />
-
-    </AuthProvider>
+    </PersistGate>
+    </Provider>
   );
 };
 

@@ -1,24 +1,23 @@
 import { useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import PreAuth from "./PreAuth";
+import { useSelector } from "react-redux";
 import PostAuth from "./PostAuth";
-import { AuthContext } from "../Context/AuthContext";
 import { ActivityIndicator, View } from "react-native";
 
 const Routes = () => {
-  const { userToken, isLoading } = useContext(AuthContext);
+  const TOKEN = useSelector((state) => state?.root?.auth?.token);
+  console.log("Redux Tokken------>", TOKEN);
 
-  if (isLoading) {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <ActivityIndicator size="large" />
-      </View>
-    );
-  }
+  // return (
+  //   <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+  //     <ActivityIndicator size="large" />
+  //   </View>
+  // );
 
   return (
     <NavigationContainer>
-      {userToken === null ? <PreAuth /> : <PostAuth />}
+      {TOKEN == null ? <PreAuth /> : <PostAuth />}
     </NavigationContainer>
   );
 };

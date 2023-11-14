@@ -1,13 +1,16 @@
 import { View, Text, ImageBackground, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 //import { LoginBg, LogoFullImg } from '../../Assets/images';
 import { Image } from '@rneui/base';
 import styles from './styles';
 import { InputPD } from '../../Components';
-import { AuthContext } from '../../Context/AuthContext';
+import { login } from '../../Utils/Requests/Requests';
+import {useSelector, useDispatch} from 'react-redux';
+import { AuthSilce } from '../../Utils/Redux/reducer/AuthSlice';
+
 
 const Login = () => {
-    const { login } = useContext(AuthContext)
+    const dispatch = useDispatch();
     const [state, setState] = useState({
         userName: null,
         password: null,
@@ -26,14 +29,22 @@ const Login = () => {
     const handleOnPressLogin = async () => {
         if (allGood()) {
             setState({ ...state, loading: true })
-            setTimeout(() => {
-                login("SOME TOKEN HERE")
-                setState({ ...state, loading: !true })
-            }, 1000);
+            let payload={ "email": state.userName,
+            "password": state.password}
+
+               login(payload).then(res => {
+                dispatch(AuthSilce?.actions?.ADD_TOKKEN(res?.data?.access));
+                    setState({ ...state, loading: !true })
+              })
+              .catch(err => {
+               console.log("error",err?.message)
+               setState({ ...state, loading: !true })
+               setErrorMessage()
+              });
+
             return;
         }
-        setState({ ...state, loading: !true })
-        setErrorMessage()
+
     }
 
     const setErrorMessage = () => {
