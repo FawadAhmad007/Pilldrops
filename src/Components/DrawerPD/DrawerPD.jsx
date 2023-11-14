@@ -11,9 +11,12 @@ import { getGreeting } from '../../Utils/Helpers/Helpers';
 import ICONS from '../Icons';
 import { useNavigation } from '@react-navigation/native';
 import { DRAWER_DATA } from '../../Utils/Constants/Constants';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../redux';
 
 const DrawerPD = props => {
     const navigation = useNavigation();
+    const dispatch = useDispatch()
     const [expand, setExpand] = useState({
         1: !false,
         2: !false,
@@ -59,7 +62,7 @@ const DrawerPD = props => {
                         <View key={item + i} style={{ borderWidth: 0, }} >
                             <View style={[styles.drawerTitleContainer, { borderTopWidth: i === 0 ? 0 : 1 }]} >
                                 <Pressable
-                                    // onPress={item.title === "Logout" ? logout : () => handlePressTitle(item, i)}
+                                    onPress={item.title === "Logout" ? () => dispatch(logoutUser()) : () => handlePressTitle(item, i)}
                                     style={{ flexDirection: "row", alignItems: "center" }}
                                 >
                                     <View style={styles.filler} />

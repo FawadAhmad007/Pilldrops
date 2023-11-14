@@ -6,7 +6,7 @@ export const postConfig = (data, url) => {
     data,
     url,
     headers: {
-      "Content-Type": "multipart/form-data",
+      "Content-Type": "application/json",
     },
   };
 };

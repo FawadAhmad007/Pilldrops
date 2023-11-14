@@ -1,13 +1,13 @@
 import { View, Text, ImageBackground, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
-import React, {  useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 //import { LoginBg, LogoFullImg } from '../../Assets/images';
 import { Image } from '@rneui/base';
 import styles from './styles';
 import { InputPD } from '../../Components';
 import { login } from '../../Utils/Requests/Requests';
-import {useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { AuthSilce } from '../../Utils/Redux/reducer/AuthSlice';
-
+import { loginUser } from '../../redux';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -28,19 +28,23 @@ const Login = () => {
     }
     const handleOnPressLogin = async () => {
         if (allGood()) {
-            setState({ ...state, loading: true })
-            let payload={ "email": state.userName,
-            "password": state.password}
+            setState({ ...state, loading: false })
+            let payload = {
+                "email": state.userName,
+                "password": state.password
+            }
 
-               login(payload).then(res => {
-                dispatch(AuthSilce?.actions?.ADD_TOKKEN(res?.data?.access));
-                    setState({ ...state, loading: !true })
-              })
-              .catch(err => {
-               console.log("error",err?.message)
-               setState({ ...state, loading: !true })
-               setErrorMessage()
-              });
+            dispatch(loginUser(payload))
+            //
+            //             login(payload).then(res => {
+            //                 dispatch(AuthSilce?.actions?.ADD_TOKKEN(res?.data?.access));
+            //                 setState({ ...state, loading: !true })
+            //             })
+            //                 .catch(err => {
+            //                     console.log("error", err?.message)
+            //                     setState({ ...state, loading: !true })
+            //                     setErrorMessage()
+            //                 });
 
             return;
         }

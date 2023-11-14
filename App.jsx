@@ -1,9 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import Routes from './src/Navigation/Routes';
-import {Provider} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
-import {persistor, store} from './src/Utils/Redux/store/Store';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persister, store } from './src/redux/store';
+//import { persistor, store } from './src/Utils/Redux/store/Store';
 
 const App = () => {
 
@@ -15,10 +16,10 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-      <StatusBar barStyle={'dark-content'} />
-      <Routes />
-    </PersistGate>
+      <PersistGate loading={null} persistor={persister}>
+        <StatusBar barStyle={'dark-content'} />
+        <Routes />
+      </PersistGate>
     </Provider>
   );
 };

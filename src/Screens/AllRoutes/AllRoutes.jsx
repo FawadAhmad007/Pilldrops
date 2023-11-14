@@ -3,8 +3,12 @@ import React, { useContext, useEffect } from 'react'
 import { AllRoutesCard, Header } from '../../Components'
 import styles from './styles'
 import { formatDate } from '../../Utils/Helpers/Helpers'
+import { useSelector } from 'react-redux'
 
 const AllRoutes = ({ navigation }) => {
+    const { routes } = useSelector((state) => state.routes);
+    console.log("routes...", routes)
+
     const today = new Date();
 
     useEffect(() => {

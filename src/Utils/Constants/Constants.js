@@ -79,5 +79,6 @@ export const DRAWER_DATA = [
   },
   {
     title: "Logout",
+    route: CONSTANTS.SCREEN_NAME.Login
   },
 ];
