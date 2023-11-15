@@ -3,18 +3,16 @@ import {
   DATA_FAILED,
   DATA_LOADING,
   LOGOUT_SUCCESS,
-
 } from "../actions/types";
 const initialState = {
   isLoggedIn: false,
-  token: "",
+  token: null,
   userId: "",
   user: null,
   isLoading: false,
   isError: false,
   countProgress: 0,
   errMsg: null,
-
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -47,7 +45,6 @@ export const authReducer = (state = initialState, action) => {
         errMsg: null,
       };
     case LOGOUT_SUCCESS:
-
       return {
         ...state,
         user: [],

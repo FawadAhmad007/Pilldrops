@@ -5,9 +5,12 @@ import { setContainerWidth } from '../../Utils/Helpers/Helpers';
 import ICONS from '../Icons';
 import { useNavigation } from '@react-navigation/native';
 import { Constants } from '../../Utils';
+import moment from 'moment';
 
-const AllRoutesCard = () => {
+const AllRoutesCard = ({routeStatus,zoneName,createdAt,stops,miles,etc, driverName,delivered, fail, pending}) => {
     const navigation = useNavigation()
+
+    const valueInPercentage = (value) => (value / (delivered + fail + pending)) * 100;
     return (
         <TouchableOpacity onPress={() => navigation.navigate(Constants.SCREEN_NAME.RouteDetails)}>
             <View style={styles.containerStyle} >
@@ -19,15 +22,15 @@ const AllRoutesCard = () => {
                     <View style={styles.statusZoneContainer} >
                         <View style={[styles.statusContainer, { backgroundColor: "#0094FF" }]} >
                             <Text style={styles.statusTxt} >
-                                Ready
+                               {routeStatus}
                             </Text>
                         </View>
                         <Text style={styles.borroughTxt} >
-                            Borough/Zone
+                           {zoneName}
                         </Text>
                     </View>
                     <Text style={styles.time} >
-                        08-09-2023 11:35 PM
+                        {moment(createdAt).format('l LT')}
                     </Text>
                 </View>
 
@@ -40,10 +43,10 @@ const AllRoutesCard = () => {
                         </Text>
                     </Text>
                     <Text style={styles.stops} >
-                        35 Stops    15 Miles
+                       {`${stops} Stops ${miles} Miles`}
                     </Text>
                     <Text style={styles.stops} >
-                        ETC    4 Hours 20 Minutes
+                        {`ETC ${etc}`}
                     </Text>
                 </View>
 
@@ -60,7 +63,7 @@ const AllRoutesCard = () => {
                 {/* Row 4 */}
                 <View style={styles.row_4}>
                     <Text style={styles.stops} >
-                        Driver name
+                       {driverName}
                     </Text>
                     <Text style={styles.readyToStart} >
                         Ready To Start
@@ -72,37 +75,37 @@ const AllRoutesCard = () => {
                     <View style={styles.row_5_leftContainer} >
                         <View style={styles.numberIconContainer} >
                             <ICONS.CheckedIcon />
-                            <Text style={styles.numberIcon} >70</Text>
+                            <Text style={styles.numberIcon} >{delivered}</Text>
                         </View>
                         <View style={styles.numberIconContainer} >
                             <ICONS.CrossIcon />
-                            <Text style={styles.numberIcon} >10</Text>
+                            <Text style={styles.numberIcon} >{fail}</Text>
                         </View>
                         <View style={styles.numberIconContainer} >
                             <ICONS.WarningIcon />
-                            <Text style={styles.numberIcon} >20</Text>
+                            <Text style={styles.numberIcon} >{pending}</Text>
                         </View>
                     </View>
                     <View style={styles.row_5_rightContainer} >
                         <Text style={[styles.commonColorStyle,
                         styles["green"],
-                        { width: setContainerWidth(70) }
+                        { width: setContainerWidth(valueInPercentage(delivered)) }
                         ]}>
-                            {"70" + "%"}
+                            {valueInPercentage(delivered) + "%"}
                         </Text>
                         <Text style={[styles.commonColorStyle,
                         styles["red"], {
-                            width: setContainerWidth(20)
+                            width: setContainerWidth(valueInPercentage(fail))
                         }]}
                         >
-                            {"20" + "%"}
+                            {valueInPercentage(fail) + "%"}
                         </Text>
                         <Text style={[styles.commonColorStyle,
                         styles["orange"],
                         {
-                            width: setContainerWidth(10)
+                            width: setContainerWidth(valueInPercentage(pending))
                         }]}>
-                            {"10" + "%"}
+                            {valueInPercentage(pending) + "%"}
                         </Text>
                     </View>
                 </View>
