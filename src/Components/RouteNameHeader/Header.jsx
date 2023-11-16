@@ -13,7 +13,7 @@ import { mvs } from '../../config/metrices'
 
 const RouteNameHeader = ({ onPress, title, value, onChangeText, showBtn = false, type, time }) => {
     const navigation = useNavigation();
-    const { getCameraPermission } = useContext(AuthContext)
+    // const { getCameraPermission } = useContext(AuthContext)
 
     const handleClickScanner = async () => {
         const hasPermission = await getCameraPermission()
