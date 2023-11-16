@@ -10,7 +10,7 @@ import { Constants } from '../../Utils'
 import { AuthContext } from '../../Context/AuthContext'
 import images from '../../assets/images'
 
-const Header = ({ onPress, title, value, onChangeText, showBtn = false, isSearch = true, type, time, title2 = "" }) => {
+const Header = ({ onPress, title, value, onChangeText, showBtn = false, isSearch = true, type, time, title2 = "", profile }) => {
     const navigation = useNavigation();
 
     const handleClickScanner = async () => {
@@ -42,11 +42,11 @@ const Header = ({ onPress, title, value, onChangeText, showBtn = false, isSearch
                     </View>
                     <View style={{ alignItems: "center", width: "25%" }} >
                         <Image
-                            source={images.UserImg}
+                            source={profile?.profilefile ? { uri: profile?.profilefile } : images.UserImg}
                             resizeMode="contain"
                             style={{ width: 33, height: 33, borderRadius: 17 }}
                         />
-                        <Text style={styles.userName} >Marian Novak</Text>
+                        <Text style={styles.userName} >{profile?.name}</Text>
                     </View>
                 </SafeAreaView>
             </View>

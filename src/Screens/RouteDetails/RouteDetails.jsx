@@ -1,10 +1,11 @@
-import { Dimensions, ScrollView, TouchableOpacity, View } from 'react-native'
+import { Dimensions, FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { ButtonPD, Header, ICONS, OrderPickupScanCard } from '../../Components'
 import styles from './styles'
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
 import { Constants } from '../../Utils'
 import { Text } from '@rneui/base'
+import { useSelector } from 'react-redux'
 
 const IconDataField = ({ name, icon, reg = false, }) => {
     return (
@@ -16,7 +17,8 @@ const IconDataField = ({ name, icon, reg = false, }) => {
 }
 
 const RouteDetails = ({ navigation }) => {
-
+    const { routes } = useSelector((state) => state.routes);
+    // console.log("routes....", routes[0]?.route?.name)
     const handlePressGoback = () => {
         navigation.navigate(Constants.SCREEN_NAME.AllRoutes)
     }
@@ -26,11 +28,22 @@ const RouteDetails = ({ navigation }) => {
             headerShown: true,
             header: () => <Header
                 type={"routeDetails"}
-                title={"Brooklyn/Zone 2"}
+                title={routes[0]?.route?.name}
                 time={"Monday 10-16-2023"}
+                profile={routes[0]?.route?.driver}
             />,
         })
     }, [navigation])
+
+    const renderItem = ({ item, index }) => {
+        return (
+            <OrderPickupScanCard
+                showIcon={true}
+                item={item}
+                index={index}
+            />
+        )
+    }
 
     return (
         <ScrollView
@@ -41,7 +54,7 @@ const RouteDetails = ({ navigation }) => {
                 <View style={styles.container}  >
                     <View style={styles.header} >
                         <View style={styles.header_r1} >
-                            <Text style={styles.editRouteTxt}>35 Stops</Text>
+                            <Text style={styles.editRouteTxt}>{routes.length} Stops</Text>
                             <TouchableOpacity style={styles.header_r1_c2} >
                                 <Text style={styles.editRouteTxt} >Edit Route</Text>
                                 <ICONS.PencilIcon />
@@ -74,7 +87,15 @@ const RouteDetails = ({ navigation }) => {
                             </View>
                         </View>
                     </View>
-                    <ScrollView
+                    <FlatList
+                        style={styles.scrollView}
+                        contentContainerStyle={styles.contentContainerStyle}
+                        data={routes}
+                        bounces={false}
+                        renderItem={renderItem}
+                        keyExtractor={(item, index) => index.toString()}
+                    />
+                    {/* <ScrollView
                         showsVerticalScrollIndicator={false}
                         contentContainerStyle={styles.contentContainerStyle}
                         style={styles.scrollView}
@@ -92,7 +113,7 @@ const RouteDetails = ({ navigation }) => {
                         <OrderPickupScanCard showIcon={true} />
                         <OrderPickupScanCard showIcon={true} />
 
-                    </ScrollView>
+                    </ScrollView> */}
                     <View style={styles.footer} >
                         <ButtonPD plain={true} title={"Re-optimize Route "} />
                         <View style={{ flexDirection: "row", gap: 10 }} >

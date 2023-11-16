@@ -1,13 +1,13 @@
-const {StyleSheet, Platform} = require('react-native');
+const { StyleSheet, Platform } = require('react-native');
 
 const styles = StyleSheet.create({
   contentContainerStyle: {
-    backgroundColor: 'transparent',
+    // backgroundColor: 'transparent',
     paddingBottom: 10,
   },
   scrollView: {
-    backgroundColor: 'white',
-    height: '8%',
+    //backgroundColor: 'green',
+    flex: 1,
   },
   container: {
     height: '100%',

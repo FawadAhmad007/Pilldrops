@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { store } from "../redux/store";
 
 export const isLive = true
-const token = store.getState()?.auth?.token;
-console.log("token...", store.getState()?.auth?.token)
+//const token = store.getState()?.auth?.token;
+//console.log("token...", store.getState()?.auth?.token)
 
 const BASE_URL = isLive ? "https://testadmin.pilldrop.ai" : ""
 const baseUrl = axios.create({
@@ -17,6 +17,8 @@ baseUrl.interceptors.request.use(
             ...config.headers,
         };
 
+        const token = store.getState()?.auth?.token;
+        console.log("token...", token)
         config.headers.Authorization = `Bearer ${token}`;
         // console.log("config header", config, userLang)
         return config;

@@ -31,9 +31,9 @@ export const loginUser = (data) => {
 export const logoutUser = (data) => {
   return (dispatch) => {
     console.log("loggout");
-    dispatch(getroutes({}));
-    // dispatch({
-    //   type: LOGOUT_SUCCESS,
-    // });
+    // dispatch(getroutes({}));
+    dispatch({
+      type: LOGOUT_SUCCESS,
+    });
   };
 };

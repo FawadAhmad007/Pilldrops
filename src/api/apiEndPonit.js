@@ -6,6 +6,7 @@ export const EndPoint = {
     //LOGIN: "authentication",
 
     //routes
-    ROUTES: "/api/routes"
+    ALLROUTES: "/api/routes",
+    ROUTES: "api/routeOrders/?route="
 
 }

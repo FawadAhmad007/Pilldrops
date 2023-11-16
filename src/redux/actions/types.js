@@ -7,4 +7,5 @@ export const LOGIN_SUCCESS = "LOGIN";
 export const LOGOUT_SUCCESS = "LOGOUT";
 
 //route
+export const ALLROUTES = 'ALLROUTES'
 export const ROUTES = 'ROUTES'

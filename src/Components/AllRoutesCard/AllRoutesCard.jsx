@@ -3,16 +3,14 @@ import React from 'react';
 import styles from './styles';
 import { setContainerWidth } from '../../Utils/Helpers/Helpers';
 import ICONS from '../Icons';
-import { useNavigation } from '@react-navigation/native';
-import { Constants } from '../../Utils';
+
 import moment from 'moment';
 
-const AllRoutesCard = ({routeStatus,zoneName,createdAt,stops,miles,etc, driverName,delivered, fail, pending}) => {
-    const navigation = useNavigation()
+const AllRoutesCard = ({ item, onPressItem }) => {
 
-    const valueInPercentage = (value) => (value / (delivered + fail + pending)) * 100;
+    const valueInPercentage = (value) => (value / (item.totalDelivered + item.totalFailed + item.totalPending)) * 100;
     return (
-        <TouchableOpacity onPress={() => navigation.navigate(Constants.SCREEN_NAME.RouteDetails)}>
+        <TouchableOpacity onPress={() => onPressItem(item)}>
             <View style={styles.containerStyle} >
                 {/* Row 1 */}
                 <View style={styles.row_1} >
@@ -22,15 +20,15 @@ const AllRoutesCard = ({routeStatus,zoneName,createdAt,stops,miles,etc, driverNa
                     <View style={styles.statusZoneContainer} >
                         <View style={[styles.statusContainer, { backgroundColor: "#0094FF" }]} >
                             <Text style={styles.statusTxt} >
-                               {routeStatus}
+                                {item.routeStatus}
                             </Text>
                         </View>
                         <Text style={styles.borroughTxt} >
-                           {zoneName}
+                            {item.name}
                         </Text>
                     </View>
                     <Text style={styles.time} >
-                        {moment(createdAt).format('l LT')}
+                        {moment(item.createdAt).format('l LT')}
                     </Text>
                 </View>
 
@@ -43,10 +41,10 @@ const AllRoutesCard = ({routeStatus,zoneName,createdAt,stops,miles,etc, driverNa
                         </Text>
                     </Text>
                     <Text style={styles.stops} >
-                       {`${stops} Stops ${miles} Miles`}
+                        {`${item.totalOrderStop} Stops ${item.distanceCal} Miles`}
                     </Text>
                     <Text style={styles.stops} >
-                        {`ETC ${etc}`}
+                        {`ETC ${item.estimatedTimeCal}`}
                     </Text>
                 </View>
 
@@ -63,7 +61,7 @@ const AllRoutesCard = ({routeStatus,zoneName,createdAt,stops,miles,etc, driverNa
                 {/* Row 4 */}
                 <View style={styles.row_4}>
                     <Text style={styles.stops} >
-                       {driverName}
+                        {item?.driver + ''}
                     </Text>
                     <Text style={styles.readyToStart} >
                         Ready To Start
@@ -75,37 +73,37 @@ const AllRoutesCard = ({routeStatus,zoneName,createdAt,stops,miles,etc, driverNa
                     <View style={styles.row_5_leftContainer} >
                         <View style={styles.numberIconContainer} >
                             <ICONS.CheckedIcon />
-                            <Text style={styles.numberIcon} >{delivered}</Text>
+                            <Text style={styles.numberIcon} >{item.totalDelivered}</Text>
                         </View>
                         <View style={styles.numberIconContainer} >
                             <ICONS.CrossIcon />
-                            <Text style={styles.numberIcon} >{fail}</Text>
+                            <Text style={styles.numberIcon} >{item.totalFailed}</Text>
                         </View>
                         <View style={styles.numberIconContainer} >
                             <ICONS.WarningIcon />
-                            <Text style={styles.numberIcon} >{pending}</Text>
+                            <Text style={styles.numberIcon} >{item.totalPending}</Text>
                         </View>
                     </View>
                     <View style={styles.row_5_rightContainer} >
                         <Text style={[styles.commonColorStyle,
                         styles["green"],
-                        { width: setContainerWidth(valueInPercentage(delivered)) }
+                        { width: setContainerWidth(valueInPercentage(item.totalDelivered)) }
                         ]}>
-                            {valueInPercentage(delivered) + "%"}
+                            {valueInPercentage(item.totalDelivered) + "%"}
                         </Text>
                         <Text style={[styles.commonColorStyle,
                         styles["red"], {
-                            width: setContainerWidth(valueInPercentage(fail))
+                            width: setContainerWidth(valueInPercentage(item.totalFailed))
                         }]}
                         >
-                            {valueInPercentage(fail) + "%"}
+                            {valueInPercentage(item.totalFailed) + "%"}
                         </Text>
                         <Text style={[styles.commonColorStyle,
                         styles["orange"],
                         {
-                            width: setContainerWidth(valueInPercentage(pending))
+                            width: setContainerWidth(valueInPercentage(item.totalPending))
                         }]}>
-                            {valueInPercentage(pending) + "%"}
+                            {valueInPercentage(item.totalPending) + "%"}
                         </Text>
                     </View>
                 </View>

@@ -13,23 +13,24 @@ const IconDataField = ({ name, icon, reg = false, }) => {
     )
 }
 
-const OrderPickupScanCard = ({ showIcon = false }) => {
+const OrderPickupScanCard = ({ showIcon = false, item, index }) => {
+    let order = item.order
     return (
         <View style={styles.cardContainer} >
             <View style={styles.containerStyle} >
                 <View style={styles.left} >
                     <View style={styles.row_1} >
                         <View style={styles.r1c1} >
-                            <Text style={styles.pharmacyName} >Pharmacy Name</Text>
-                            <Text style={styles.orderId} >Order ID : 01-00064</Text>
-                            <IconDataField name={"Ceballos Natividad"} icon={<ICONS.UserIcon />} reg={true} />
+                            <Text style={styles.pharmacyName} >{order.pharmacy_name}</Text>
+                            <Text style={styles.orderId} >Order ID : {order.id}</Text>
+                            <IconDataField name={order.name} icon={<ICONS.UserIcon />} reg={true} />
                         </View>
                         <View style={styles.r1c2} >
                             <View style={{ flexDirection: "row", alignItems: "center", gap: 5 }} >
                                 {showIcon && <ICONS.ExclamationIcon />}
                                 <View style={styles.copayContainer} >
                                     <Text style={[styles.orderId, { color: "white" }]} >
-                                        Copay : $ 19.99
+                                        Copay : $ {order.totalcopay}
                                     </Text>
                                 </View>
                             </View>
@@ -43,12 +44,12 @@ const OrderPickupScanCard = ({ showIcon = false }) => {
                         </View>
                     </View>
                     <View style={styles.row_2} >
-                        <IconDataField name={"(909) 000 9999 "} icon={<ICONS.TelephoneIcon />} />
+                        <IconDataField name={order.contact} icon={<ICONS.TelephoneIcon />} />
                         <IconDataField name={"(909) 000 9999 "} icon={<ICONS.MobileIcon />} />
-                        <IconDataField name={"(909) 000 9999 "} icon={<ICONS.LandlineIcon />} />
+                        <IconDataField name={order.workNumber} icon={<ICONS.LandlineIcon />} />
                     </View>
                     <View style={styles.row_2} >
-                        <IconDataField name={"24-07 94th street, first floor east elmhurst, Forest Hills"} icon={<ICONS.AddressIcon />} />
+                        <IconDataField name={order.address} icon={<ICONS.AddressIcon />} />
                     </View>
                     <View style={styles.row_3} >
                         <IconDataField name={"Queens, NY 11369"} />
@@ -61,7 +62,7 @@ const OrderPickupScanCard = ({ showIcon = false }) => {
                 </View>
             </View>
             <View style={styles.countContainer} >
-                <Text style={styles.countTxt} >08</Text>
+                <Text style={styles.countTxt} >{index + 1}</Text>
             </View>
         </View>
     );

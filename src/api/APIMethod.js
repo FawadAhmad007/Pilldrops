@@ -4,7 +4,7 @@ import { logoutUser } from "../redux";
 import { DATA_FAILED, } from "../redux/actions/types";
 import { baseUrl } from "./baseUrl";
 
-export const PostMethod = async (endPoint, data, dispatch, type, fun, cb) => {
+export const PostMethod = async (endPoint, data, dispatch, type, key, cb) => {
   const root = await AsyncStorage.getItem("persist:root");
 
   const parasRoot = JSON.parse(root)
@@ -43,16 +43,20 @@ export const PostMethod = async (endPoint, data, dispatch, type, fun, cb) => {
   }
 };
 
-export const GetMethod = async (endPoint, data, dispatch, type, fun, cb) => {
+export const GetMethod = async (endPoint, data, dispatch, type, key, cb) => {
   const root = await AsyncStorage.getItem("persist:root");
 
   const parasRoot = JSON.parse(root)
+  if (key) {
+    endPoint = endPoint + key
+  }
+  console.log("endpoint..", endPoint)
   let res
 
   await baseUrl
     .get(endPoint, data)
     .then(async (ress) => {
-      console.log("res?.data?.success", ress)
+      // console.log("res?.data?.success", ress)
 
       res = ress
     })

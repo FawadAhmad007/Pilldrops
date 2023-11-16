@@ -1,15 +1,21 @@
 import {
-    ROUTES
+    ALLROUTES, ROUTES
 
 } from "../actions/types";
 const initialState = {
 
-    routes: [],
+    allRoutes: [],
+    routes: []
 
 };
 
 export const routeReducer = (state = initialState, action) => {
     switch (action.type) {
+        case ALLROUTES:
+            return {
+                ...state,
+                allRoutes: action.payload
+            };
         case ROUTES:
             return {
                 ...state,

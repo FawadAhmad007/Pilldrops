@@ -4,14 +4,30 @@ import { GetMethod, PostMethod } from "../../api/APIMethod";
 import { baseUrl } from "../../api/baseUrl";
 
 import {
-    ROUTES
+    ALLROUTES, ROUTES
 
 } from "./types";
 
-export const getroutes = (data, fun,) => {
+export const getAllRoutes = (data, key,) => {
     return (dispatch) => {
 
-        GetMethod(EndPoint.ROUTES, data, dispatch, false, fun, cb => {
+        GetMethod(EndPoint.ALLROUTES, data, dispatch, false, key, cb => {
+            console.log('cb', cb)
+
+            dispatch({
+                type: ALLROUTES,
+                payload: cb.data,
+            });
+
+        })
+
+    };
+};
+
+export const getRoutes = (data, key,) => {
+    return (dispatch) => {
+
+        GetMethod(EndPoint.ROUTES, data, dispatch, false, key, cb => {
             console.log('cb', cb)
 
             dispatch({
