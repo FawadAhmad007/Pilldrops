@@ -98,7 +98,46 @@ const Design = ({}) => {
     });
   }, [navigation]);
 
-  console.log("======>", routes);
+  const renderMarkers = () => {
+    return routes.map((order, index) => (
+      <Marker
+        key={order.id}
+        coordinate={{
+          latitude: parseFloat(order.order.latitude),
+          longitude: parseFloat(order.order.longitude),
+        }}
+        title={order.order.name}
+        description={order.order.address}
+      >
+        <>
+          {/* Add index + 1 to start numbering from 1 instead of 0 */}
+          <View
+            style={{
+              backgroundColor: "white",
+              borderRadius: 15,
+              padding: 5,
+              justifyContent: "center",
+              alignItems: "center",
+              borderColor: "#A20000",
+              borderWidth: 1,
+            }}
+          >
+            <SairaBold
+              label={(index + 1).toString()}
+              fw={"700"}
+              size={12}
+              color={"#000"}
+            />
+          </View>
+          <Image
+            source={images.Oval}
+            style={{ width: mvs(30), height: mvs(30) }}
+            resizeMode="contain"
+          />
+        </>
+      </Marker>
+    ));
+  };
 
   const renderItem = ({ item, index }) => {
     return (
@@ -110,25 +149,6 @@ const Design = ({}) => {
         }
       />
     );
-  };
-
-  const renderMarkers = () => {
-    return routes.map((order) => (
-      <Marker
-        key={order.id}
-        coordinate={{
-          latitude: parseFloat(order.order.latitude),
-          longitude: parseFloat(order.order.longitude),
-        }}
-        title={order.order.name}
-        description={order.order.address}
-      >
-        <Image
-          source={images.Oval}
-          style={{ width: 30, height: 30 }} // Adjust the size of the image as needed
-        />
-      </Marker>
-    ));
   };
 
   return (
@@ -169,7 +189,6 @@ const Design = ({}) => {
       </MapView>
 
       <BottomSheet
-        // ref={bottomSheetRef}
         index={0}
         snapPoints={["25%", "80%"]}
         onChange={(index) => setBottomSheetStatus(index)}
@@ -186,87 +205,7 @@ const Design = ({}) => {
               padding: mvs(4),
             }}
           >
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                width: "58%",
-              }}
-            >
-              <Image
-                source={images.GroupIcon}
-                resizeMode="contain"
-                style={{ width: mvs(25), height: mvs(25) }}
-              />
-              <View
-                style={{
-                  marginStart: mvs(5),
-                }}
-              >
-                <SairaBold
-                  label={"Pill Drop"}
-                  fw={"700"}
-                  size={14}
-                  mt={mvs(5)}
-                  color={"#000"}
-                />
-                <SairaText
-                  label={"90-02 Queens Blvd, Queens, NY 11373"}
-                  fw={"400"}
-                />
-              </View>
-            </View>
-
-            <View
-              style={{
-                marginHorizontal: mvs(5),
-                marginEnd: mvs(11),
-                backgroundColor: "#0B6699",
-                width: "40%",
-                borderRadius: mvs(8),
-                padding: mvs(8),
-              }}
-            >
-              <SairaBold
-                label={"Route Name"}
-                fw={"700"}
-                size={14}
-                color={"#fff"}
-              />
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <SairaText
-                  label={"30 Stops"}
-                  mt={mvs(3)}
-                  fw={"700"}
-                  size={10}
-                  color={"#fff"}
-                />
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <SairaText
-                    label={"Edit Route"}
-                    mt={mvs(3)}
-                    fw={"400"}
-                    size={12}
-                    color={"#fff"}
-                  />
-                  <Image
-                    source={images.Pen}
-                    resizeMode="contain"
-                    style={{
-                      width: mvs(12),
-                      height: mvs(12),
-                      marginHorizontal: mvs(5),
-                    }}
-                  />
-                </View>
-              </View>
-            </View>
+            {/* ... (existing code) */}
           </View>
         )}
         <BottomSheetFlatList
@@ -276,9 +215,7 @@ const Design = ({}) => {
             width: "100%",
             flex: 1,
             marginTop: mvs(8),
-
             backgroundColor: "0B6699",
-            //position: "absolute",
           }}
           data={data}
           renderItem={renderItem}
