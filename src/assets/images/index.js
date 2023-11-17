@@ -37,8 +37,10 @@ const SignRecive = require("./signRe.png");
 const SignSend = require("./signSend.png");
 const Direction = require("./direction.png");
 const Send = require("./send.png");
+const Oval = require("./Oval.png");
 
 export default Images = {
+  Oval,
   Send,
   Paper,
   Direction,
