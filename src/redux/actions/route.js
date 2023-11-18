@@ -1,41 +1,45 @@
 import { Alert } from "react-native";
 import { EndPoint } from "../../api/apiEndPonit";
-import { GetMethod, PostMethod } from "../../api/APIMethod";
+import { GetMethod, PatchMethod, PostMethod } from "../../api/APIMethod";
 import { baseUrl } from "../../api/baseUrl";
 
-import {
-    ALLROUTES, ROUTES
+import { ALLROUTES, ROUTES } from "./types";
 
-} from "./types";
+export const getAllRoutes = (data, key) => {
+  return (dispatch) => {
+    GetMethod(EndPoint.ALLROUTES, data, dispatch, false, key, (cb) => {
+      console.log("cb", cb);
 
-export const getAllRoutes = (data, key,) => {
-    return (dispatch) => {
-
-        GetMethod(EndPoint.ALLROUTES, data, dispatch, false, key, cb => {
-            console.log('cb', cb)
-
-            dispatch({
-                type: ALLROUTES,
-                payload: cb.data,
-            });
-
-        })
-
-    };
+      dispatch({
+        type: ALLROUTES,
+        payload: cb.data,
+      });
+    });
+  };
 };
 
-export const getRoutes = (data, key,) => {
-    return (dispatch) => {
+export const getRoutes = (data, key) => {
+  return (dispatch) => {
+    GetMethod(EndPoint.ROUTES, data, dispatch, false, key, (cb) => {
+      console.log("cb", cb);
 
-        GetMethod(EndPoint.ROUTES, data, dispatch, false, key, cb => {
-            console.log('cb', cb)
+      dispatch({
+        type: ROUTES,
+        payload: cb,
+      });
+    });
+  };
+};
 
-            dispatch({
-                type: ROUTES,
-                payload: cb,
-            });
+export const updateStatus = (data, key) => {
+  return (dispatch) => {
+    PatchMethod(EndPoint.UPDATE_STATUS, data, dispatch, false, key, (cb) => {
+      console.log("cb", cb);
 
-        })
-
-    };
+      dispatch({
+        type: ROUTES,
+        payload: cb,
+      });
+    });
+  };
 };
