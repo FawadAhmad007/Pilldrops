@@ -1,4 +1,4 @@
-import { Dimensions, FlatList, ScrollView,Image, TouchableOpacity, View } from 'react-native'
+import { Dimensions, FlatList, ScrollView, Image, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useRef } from 'react'
 import { ButtonPD, Header, ICONS, OrderPickupScanCard } from '../../Components'
 import styles from './styles'
@@ -30,46 +30,45 @@ const RouteDetails = ({ navigation }) => {
     }
 
     const renderMarkers = () => {
-        return routes.map((order,index) => (
+        return routes.map((order, index) => (
             <Marker
-            key={order.id}
-            coordinate={{
-              latitude: parseFloat(order.order.latitude),
-              longitude: parseFloat(order.order.longitude),
-            }}
-            title={order.order.name}
-            description={order.order.address}
-          >
-            <>
-              {/* Add index + 1 to start numbering from 1 instead of 0 */}
-              <View
-                style={{
-                  backgroundColor: "white",
-                  borderRadius: 15,
-                  padding: 5,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderColor: "#A20000",
-                  borderWidth: 1,
+                key={order.id}
+                coordinate={{
+                    latitude: parseFloat(order.order.latitude),
+                    longitude: parseFloat(order.order.longitude),
                 }}
-              >
-                <SairaBold
-                  label={(index + 1).toString()}
-                  fw={"700"}
-                  size={12}
-                  color={"#000"}
-                />
-              </View>
-              <Image
-                source={images.Oval}
-                style={{ width: mvs(30), height: mvs(30) }}
-                resizeMode="contain"
-              />
-            </>
-          </Marker>
+                title={order.order.name}
+                description={order.order.address}
+            >
+                <>
+                    {/* Add index + 1 to start numbering from 1 instead of 0 */}
+                    <View
+                        style={{
+                            backgroundColor: "white",
+                            borderRadius: 15,
+                            padding: 5,
+                            justifyContent: "center",
+                            alignItems: "center",
+                            borderColor: "#A20000",
+                            borderWidth: 1,
+                        }}
+                    >
+                        <SairaBold
+                            label={(index + 1).toString()}
+                            fw={"700"}
+                            size={12}
+                            color={"#000"}
+                        />
+                    </View>
+                    <Image
+                        source={images.Oval}
+                        style={{ width: mvs(30), height: mvs(30) }}
+                        resizeMode="contain"
+                    />
+                </>
+            </Marker>
         ));
-      };
-    
+    };
 
     useEffect(() => {
         navigation.setOptions({
@@ -172,8 +171,8 @@ const RouteDetails = ({ navigation }) => {
                 </View>
             </View>
             <View style={{ height: "100%", width: "50%" }} >
-                <MapView
-                 ref={mapRef}
+                {routes[0]?.order && <MapView
+                    ref={mapRef}
                     provider={PROVIDER_GOOGLE}
                     style={{ height: "90%", width: Dimensions.get("screen").width }}
                     initialRegion={{
@@ -183,27 +182,27 @@ const RouteDetails = ({ navigation }) => {
                         longitudeDelta: 0.0421,
                     }}
                 >
-                     {renderMarkers()}
-        <MapViewDirections
-          origin={routes[0].order}
-          waypoints={routes.slice(1, -1).map((order) => order.order)}
-          destination={routes[routes.length - 1].order}
-          apikey={googleMapKey}
-          strokeWidth={3}
-          strokeColor="#A20000"
-          onReady={(result) => {
-            mapRef.current.fitToCoordinates(result.coordinates, {
-              edgePadding: {
-                right: 30,
-                left: 30,
-                top: 40,
-                bottom: 60,
-              },
-            });
-          }}
-        />
+                    {renderMarkers()}
+                    <MapViewDirections
+                        origin={routes[0]?.order}
+                        waypoints={routes.slice(1, -1).map((order) => order.order)}
+                        destination={routes[routes.length - 1].order}
+                        apikey={googleMapKey}
+                        strokeWidth={3}
+                        strokeColor="#A20000"
+                        onReady={(result) => {
+                            mapRef.current.fitToCoordinates(result.coordinates, {
+                                edgePadding: {
+                                    right: 30,
+                                    left: 30,
+                                    top: 40,
+                                    bottom: 60,
+                                },
+                            });
+                        }}
+                    />
 
-                </MapView>
+                </MapView>}
             </View>
         </ScrollView>
     )
