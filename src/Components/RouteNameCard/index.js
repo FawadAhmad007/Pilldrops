@@ -15,10 +15,12 @@ import SairaBold from "../../typography/SairaBold-text";
 import SairaCondensedBold from "../../typography/SairaCondensedBold-text";
 import RNCB from "../RouteNameCardButton";
 
-const RouteNameCard = ({ item, index, onPresUpdate }) => {
+const RouteNameCard = ({ items, index, onPresUpdate }) => {
+  console.log("itemitem", items.order)
+  let item = items.order
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity onPress={() => { }}>
       <View
         style={{
           height: mvs(20),
@@ -42,9 +44,9 @@ const RouteNameCard = ({ item, index, onPresUpdate }) => {
           <View style={{ width: "75%" }}>
             <View style={styles.row_1}>
               <View style={{ marginStart: mvs(10) }}>
-                <SairaText label={item.PharmacyName} />
+                <SairaText label={item.pharmacy_name} />
                 <SairaCondensedBold
-                  label={"Order ID: " + item.OrderID}
+                  label={"Order ID: " + item.slug}
                   fw={"700"}
                 />
               </View>
@@ -122,7 +124,7 @@ const RouteNameCard = ({ item, index, onPresUpdate }) => {
                 resizeMode="contain"
                 style={{ width: mvs(10), height: mvs(10) }}
               />
-              <SairaText label={item.phone} fw={"400"} ml={mvs(5)} />
+              <SairaText label={item.contact} fw={"400"} ml={mvs(5)} />
               <Image
                 source={images.Cell}
                 resizeMode="contain"
@@ -135,11 +137,11 @@ const RouteNameCard = ({ item, index, onPresUpdate }) => {
             <View style={styles.row_1}>
               <View style={styles.row_2_1}>
                 <SairaBold label={"Address: "} fw={"400"} numberOfLines={2}>
-                  <SairaText label={item.Address} fw={"400"} />
+                  <SairaText label={item.address} fw={"400"} />
                 </SairaBold>
               </View>
               <View style={styles.row_2_2}>
-                <SairaBold label={"Apt #" + item.delivered} fw={"400"} />
+                <SairaBold label={"Apt #" + item.status} fw={"400"} />
               </View>
             </View>
           </View>

@@ -17,7 +17,7 @@ import { Constants } from "../../Utils";
 import { useSelector } from "react-redux";
 import { googleMapKey } from "../../api/googleMapKey";
 
-const Design = ({}) => {
+const Design = ({ }) => {
   const today = new Date();
   const [bottomSheetStatus, setBottomSheetStatus] = useState(0);
   const navigation = useNavigation();
@@ -99,7 +99,8 @@ const Design = ({}) => {
   }, [navigation]);
 
   const renderMarkers = () => {
-    return routes.map((order, index) => (
+    return routes.orders.map((order, index) => (
+      console.log("items...", order.order.latitude),
       <Marker
         key={order.id}
         coordinate={{
@@ -142,7 +143,7 @@ const Design = ({}) => {
   const renderItem = ({ item, index }) => {
     return (
       <RouteNameCard
-        item={item}
+        items={item}
         index={index}
         onPresUpdate={() =>
           navigation.navigate(SCREEN_NAME.UpdateDeliveryStatus)
@@ -169,9 +170,9 @@ const Design = ({}) => {
       >
         {renderMarkers()}
         <MapViewDirections
-          origin={routes[0].order}
-          waypoints={routes.slice(1, -1).map((order) => order.order)}
-          destination={routes[routes.length - 1].order}
+          origin={routes.orders}
+          waypoints={routes.orders.slice(1, -1).map((order) => order.order)}
+          destination={routes.orders[routes.orders.length - 1].order}
           apikey={googleMapKey}
           strokeWidth={3}
           strokeColor="#A20000"
@@ -217,7 +218,7 @@ const Design = ({}) => {
             marginTop: mvs(8),
             backgroundColor: "0B6699",
           }}
-          data={data}
+          data={routes.orders}
           renderItem={renderItem}
         />
       </BottomSheet>
