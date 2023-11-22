@@ -1,3 +1,4 @@
+
 /** @format */
 
 import {
@@ -16,6 +17,7 @@ import MapViewDirections from 'react-native-maps-directions';
 import { Constants } from '../../Utils';
 import { Text } from '@rneui/base';
 import { useSelector } from 'react-redux';
+
 import images from '../../assets/images';
 import { googleMapKey } from '../../api/googleMapKey';
 import SairaBold from '../../typography/SairaBold-text';
@@ -38,6 +40,7 @@ const RouteDetails = ({ navigation }) => {
 	const [currentLocation, setCurrentLocation] = useState(null);
 	const originCoordinates = { latitude: 40.7182, longitude: -73.3543 };
 
+
 	console.log('RouteDetails ');
 	console.log('routes....', routes);
 	const handlePressGoback = () => {
@@ -51,6 +54,46 @@ const RouteDetails = ({ navigation }) => {
 				(position) => {
 					const { latitude, longitude } = position.coords;
 					console.log('getCurrentPosition....', latitude, latitude);
+    const renderMarkers = () => {
+        return routes.map((order, index) => (
+            <Marker
+                key={order.id}
+                coordinate={{
+                    latitude: parseFloat(order.order.latitude),
+                    longitude: parseFloat(order.order.longitude),
+                }}
+                title={order.order.name}
+                description={order.order.address}
+            >
+                <>
+                    {/* Add index + 1 to start numbering from 1 instead of 0 */}
+                    <View
+                        style={{
+                            backgroundColor: "white",
+                            borderRadius: 15,
+                            padding: 5,
+                            justifyContent: "center",
+                            alignItems: "center",
+                            borderColor: "#A20000",
+                            borderWidth: 1,
+                        }}
+                    >
+                        <SairaBold
+                            label={(index + 1).toString()}
+                            fw={"700"}
+                            size={12}
+                            color={"#000"}
+                        />
+                    </View>
+                    <Image
+                        source={images.Oval}
+                        style={{ width: mvs(30), height: mvs(30) }}
+                        resizeMode="contain"
+                    />
+                </>
+            </Marker>
+        ));
+    };
 
 					setCurrentLocation({ latitude, longitude });
 				},
@@ -284,5 +327,6 @@ const RouteDetails = ({ navigation }) => {
 		</ScrollView>
 	);
 };
+
 
 export default RouteDetails;
